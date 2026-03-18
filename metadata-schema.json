@@ -1,0 +1,71 @@
+{
+    "$id": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/refs/heads/main/metadata-schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "Схема описания метаданных репозитория навыков KodaCode: https://github.com/XCode-NLP/KodaSkills",
+    "type": "object",
+    "properties": {
+        "skills": {
+            "description": "Массив метаданных навыков",
+            "type": "array",
+            "items": {
+                "description": "Описание метаданных навыка",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Название навыка",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 64
+                    },
+                    "description": {
+                        "description": "Описание навыка",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1024
+                    },
+                    "version": {
+                        "description": "Версия навыка",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "url": {
+                        "type": "object",
+                        "properties": {
+                            "web": {
+                                "description": "Прямая ссылка на файл SKILL.md навыка в репозитории",
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "raw": {
+                                "description": "Прямая ссылка на сырое содержимое файла SKILL.md навыка в репозитории",
+                                "type": "string",
+                                "minLength": 1
+                            }
+                        },
+                        "required": [
+                            "web",
+                            "raw"
+                        ]
+                    }
+                },
+                "required": [
+                    "name",
+                    "description",
+                    "url"
+                ]
+            }
+        },
+        "count": {
+            "description": "Количество навыков в репозитории",
+            "type": "integer"
+        },
+        "lastUpdate": {
+            "description": "Метка времени последнего обновления метаданных в формате RFC 3339 в часовом поясе UTC",
+            "type": "string"
+        }
+    },
+    "required": [
+        "count",
+        "lastUpdate"
+    ]
+}

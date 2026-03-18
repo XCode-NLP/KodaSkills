@@ -1,0 +1,33 @@
+{
+    "skills": [
+        {
+            "name": "koda-cli-subagent",
+            "description": "Навык запуска экземпляров koda-cli для параллельной работы над сложными задачами",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-cli-subagent/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-cli-subagent/SKILL.md"
+            }
+        },
+        {
+            "name": "koda-learn",
+            "description": "Позволяет искать и устанавливать дополнительные навыки (скиллы), расширяющие функционал агента. Нужны для фокусирования агента на способах решения конкретных задач и подзадач и обогащения контекста дополнительными знаниями.",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-learn/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-learn/SKILL.md"
+            }
+        },
+        {
+            "name": "koda-skill-maker",
+            "description": "Мета-навык создания новых навыков для агентов по запросу пользователя",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-skill-maker/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-skill-maker/SKILL.md"
+            }
+        }
+    ],
+    "count": 3,
+    "lastUpdate": "2026-03-18T06:44:35Z"
+}

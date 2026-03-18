@@ -1,0 +1,57 @@
+name: Update Metadata
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - closed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generator:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Generate metadata.json
+        run: |
+          python generator.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --exit-code --quiet metadata.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit updated metadata
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          git add metadata.json
+          git commit -m "Update metadata ${TIMESTAMP}"
+          git push
