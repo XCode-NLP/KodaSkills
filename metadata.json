@@ -26,8 +26,17 @@
                 "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-skill-maker/SKILL.md",
                 "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-skill-maker/SKILL.md"
             }
+        },
+        {
+            "name": "todo-list",
+            "description": "Позволяет отслеживать шаги решения задачи",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/todo-list/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/todo-list/SKILL.md"
+            }
         }
     ],
-    "count": 3,
-    "lastUpdate": "2026-04-01T04:46:22Z"
+    "count": 4,
+    "lastUpdate": "2026-04-02T15:26:11Z"
 }
