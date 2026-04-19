@@ -1,6 +1,6 @@
 ---
 name: koda-skill-maker
-description: 'Мета-навык создания новых навыков для агентов по запросу пользователя'
+description: "Мета-навык создания новых навыков для агентов по запросу пользователя"
 license: MIT
 metadata:
   author: koda
