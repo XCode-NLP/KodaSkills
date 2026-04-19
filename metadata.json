@@ -2,11 +2,20 @@
     "skills": [
         {
             "name": "koda-cli-subagent",
-            "description": "Навык запуска экземпляров koda-cli для параллельной работы над сложными задачами",
+            "description": "Навык делегирования подзадач субагенту koda-cli. Позволяет быстрее решить комплекснык задачи из множества шагов благодаря параллельной работе с субагентом.",
             "version": "1.0.0",
             "url": {
                 "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-cli-subagent/SKILL.md",
                 "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-cli-subagent/SKILL.md"
+            }
+        },
+        {
+            "name": "koda-coder",
+            "description": "Навык, который следует использовать в каждой задаче разработки. Навык помогает сосредоточиться на том, как корректнее всего подходить к решению задач, не внося неопределённости в диалог с пользователем и в результат.",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-coder/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-coder/SKILL.md"
             }
         },
         {
@@ -28,15 +37,15 @@
             }
         },
         {
-            "name": "todo-list",
-            "description": "Позволяет отслеживать шаги решения задачи",
+            "name": "koda-todo",
+            "description": "Позволяет управлять списком отложенных задач (todo-list)",
             "version": "1.0.0",
             "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/todo-list/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/todo-list/SKILL.md"
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-todo/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-todo/SKILL.md"
             }
         }
     ],
-    "count": 4,
-    "lastUpdate": "2026-04-02T15:26:11Z"
+    "count": 5,
+    "lastUpdate": "2026-04-19T11:36:18Z"
 }
