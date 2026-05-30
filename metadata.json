@@ -2,7 +2,7 @@
     "skills": [
         {
             "name": "koda-cli-subagent",
-            "description": "Навык делегирования подзадач субагенту koda-cli. Позволяет быстрее решить комплекснык задачи из множества шагов благодаря параллельной работе с субагентом.",
+            "description": "Навык делегирования подзадач субагенту koda-cli. Позволяет быстрее решить комплексные задачи из множества шагов благодаря параллельному запуску субагента.",
             "version": "1.0.0",
             "url": {
                 "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-cli-subagent/SKILL.md",
@@ -11,7 +11,7 @@
         },
         {
             "name": "koda-coder",
-            "description": "Навык, который следует использовать в каждой задаче разработки. Навык помогает сосредоточиться на том, как корректнее всего подходить к решению задач, не внося неопределённости в диалог с пользователем и в результат.",
+            "description": "Навык, который следует использовать в каждой задаче разработки. Навык помогает сосредоточиться на том, как корректнее всего подходить к решению задач, избегая неопределённости в диалоге с пользователем и в результате работы.",
             "version": "1.0.0",
             "url": {
                 "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-coder/SKILL.md",
@@ -25,6 +25,15 @@
             "url": {
                 "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-learn/SKILL.md",
                 "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-learn/SKILL.md"
+            }
+        },
+        {
+            "name": "koda-plan",
+            "description": "Навык декомпозирования сложных задач. Помогает разложить задачу на подзадачи, составить план их выполнения и выполнить согласно плана. Использует доступные навыки",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-plan/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-plan/SKILL.md"
             }
         },
         {
@@ -46,6 +55,6 @@
             }
         }
     ],
-    "count": 5,
-    "lastUpdate": "2026-04-19T11:36:18Z"
+    "count": 6,
+    "lastUpdate": "2026-05-19T11:49:38Z"
 }
