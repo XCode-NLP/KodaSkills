@@ -46,37 +46,39 @@ Koda (KodaCode, Кода) - AI-ассистент для разработчик�
 Мы также работаем над решением для корпоративных клиентов, которое позволит разворачивать Koda во внутренней инфраструктуре компании (on-premise).
 Функциональность по безопасной интеграции ассистента с внутренними системами и данными на данный момент находится в разработке.
 
-## Ссылки на официальные ресурсы
+## Ссылки на официальные ресурсы и документацию
 
-* **Сайт**: `https://kodacode.ru`
-* **Установка**: `https://download.kodacode.ru`
+* **Сайт**: <https://kodacode.ru>
+* **Установка**: <https://download.kodacode.ru>
 * **Плагин для VS Code**:
-    * Страница в Marketplace: `https://marketplace.visualstudio.com/items?itemName=Koda.koda`
-    * Документация: `https://kodacode.ru/docs`
+    * Страница в Marketplace: <https://marketplace.visualstudio.com/items?itemName=Koda.koda>
+    * Инструкция по установке: <https://docs.kodacode.ru/plugin/install.html#jetbrains-intellij-openide-gigaide>
+    * Документация: <https://docs.kodacode.ru>
 * **Плагин для JetBrains IDE**:
-    * Инструкция по установке: `https://download.kodacode.ru/install`
-    * Документация: `https://kodacode.ru/docs`
+    * Инструкция по установке: <https://docs.kodacode.ru/plugin/install.html#jetbrains-intellij-openide-gigaide>
+    * Документация: <https://docs.kodacode.ru>
 * **koda-cli**:
-    * Инструкция по установке: `https://download.kodacode.ru`
-    * Документация: `https://docs.kodacode.ru/koda-cli/`
+    * Инструкция по установке: <https://download.kodacode.ru>
+    * Документация: <https://docs.kodacode.ru/cli/>
 * **Для физ. лиц**:
-    * Страница входа: `https://kodacode.ru/auth/login`
-    * Актуальные тарифы и условия: `https://kodacode.ru/tariffs`
-* **Для бизнеса (SaaS, On-Prem)**:
-    * Страница входа: `https://kodacode.ru/business/login`
-    * Актуальные тарифы и условия: `https://kodacode.ru/enterprise`
-* **О компании**: `https://kodacode.ru/about-company`
-* **Политика конфиденциальности**: `https://disk.yandex.ru/i/HPxkfvx-Y4Vh-g`
-* **Каталог навыков**: `https://github.com/XCode-NLP/KodaSkills`
-    * навык `koda-learn` для установки других навыков из проверенных источников: `https://raw.githubusercontent.com/XCode-NLP/KodaSkills/refs/heads/main/skills/koda-learn/SKILL.md`
-* **Реестр задач от сообщества**: `https://github.com/XCode-NLP/KodaCode`
-    * оформить сообщение об ошибке: `https://github.com/XCode-NLP/KodaCode/issues/new?template=bug_report.yml`
-    * оформить запрос функционала: `https://github.com/XCode-NLP/KodaCode/issues/new?template=feature_request.yml`
+    * Страница входа: <https://kodacode.ru/auth/login>
+    * Актуальные тарифы и условия: <https://kodacode.ru/tariffs>
+* **Для бизнеса (SaaS)**:
+    * Страница входа: <https://kodacode.ru/business/login>
+    * Актуальные тарифы и условия: <https://kodacode.ru/enterprise>
+    * Оферта на предоставление удаленного доступа к сервису по модели SaaS: <https://docs.kodacode.ru/saas/oferta.html>
+* **О компании**: <https://docs.kodacode.ru/basics/legal/about.html>
+* **Политика обработки персональных данных**: <https://docs.kodacode.ru/basics/legal/persdata.html>
+* **Каталог навыков**: <https://github.com/XCode-NLP/KodaSkills>
+    * навык `koda-learn` для установки других навыков из проверенных источников: <https://raw.githubusercontent.com/XCode-NLP/KodaSkills/refsheads/main/skills/koda-learn/SKILL.md>
+* **Реестр задач от сообщества**: <https://github.com/XCode-NLP/KodaCode>
+    * оформить сообщение об ошибке: <https://github.com/XCode-NLP/KodaCode/issues/new?template=bug_report.yml>
+    * оформить запрос функционала: <https://github.com/XCode-NLP/KodaCode/issues/new?template=feature_request.yml>
 * **Другие публичные ресурсы**:
-    * Telegram-канал: `https://t.me/kodacoderu`
-    * Telegram-сообщество: `https://t.me/kodacommunity`
-    * YouTube-канал: `https://www.youtube.com/@KodaForDev`
-    * Хабр: `https://habr.com/ru/companies/koda`
+    * Telegram-канал: <https://t.me/kodacoderu>
+    * Telegram-сообщество: <https://t.me/kodacommunity>
+    * YouTube-канал: <https://www.youtube.com/@KodaForDev>
+    * Хабр: <https://habr.com/ru/companies/koda>
 
 ## Краткие сведения для наводящих вопросов пользователю
 
@@ -201,6 +203,6 @@ context:
 
 ## Дополнительные справочные материалы
 
-* FAQ по работе в JetBrains, OpenIDE, GigaIDE: https://docs.google.com/document/d/1wU6SM3A067Kiq_gokhXbASt34Ro0XvF4unU46edSoBk/edit?tab=t.0#heading=h.9v09lq1rydt4
-* Навык koda-vscode-helper: https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-vscode-helper/SKILL.md
-* Навык koda-jetbrains-helper: https://raw.githubusercontent.com/XCode-NLP/KodaSkills/refs/heads/main/skills/koda-jetbrains-helper/SKILL.md
+* FAQ по работе в JetBrains, OpenIDE, GigaIDE: <https://docs.google.com/document/d/1wU6SM3A067Kiq_gokhXbASt34Ro0XvF4unU46edSoBk/edit?tab=t.0#heading=h.9v09lq1rydt4>
+* Навык koda-vscode-helper: <https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-vscode-helper/SKILL.md>
+* Навык koda-jetbrains-helper: <https://raw.githubusercontent.com/XCode-NLP/KodaSkills/refs/heads/main/skills/koda-jetbrains-helper/SKILL.md>
