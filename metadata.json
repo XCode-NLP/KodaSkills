@@ -19,6 +19,24 @@
             }
         },
         {
+            "name": "koda-helper",
+            "description": "Справочный навык по продуктам Koda (KodaCode). Позволяет пользователю получить помощь по использованию и настройке Koda, тарифам, моделям, лимитам",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-helper/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-helper/SKILL.md"
+            }
+        },
+        {
+            "name": "koda-jetbrains-helper",
+            "description": "Справочный навык по средам разработки компании JetBrains и производным от него продуктам (GIGAIDE, OpenIDE). Позволяет пользователю получить помощь по использованию и настройке среды разработки (IDE).",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-jetbrains-helper/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-jetbrains-helper/SKILL.md"
+            }
+        },
+        {
             "name": "koda-learn",
             "description": "Позволяет найти и установить дополнительные навыки (скиллы), расширяющие функционал Koda для решения конкретных задач. Помогает подобрать подходящие навыки для текущего проекта. Навыки нужны для фокусирования агента на способах решения конкретных задач и обогащения контекста дополнительными знаниями. Активируется инструментом `read_skill` (vscode/jetbrains) или `Activate Skill` (cli) с передачей аргумента `koda-learn`.",
             "version": "1.0.0",
@@ -53,8 +71,17 @@
                 "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-todo/SKILL.md",
                 "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-todo/SKILL.md"
             }
+        },
+        {
+            "name": "koda-vscode-helper",
+            "description": "Справочный навык по Visual Studio Code (`vscode`, `code`) и производным от него продуктам (VSCodium и Eclipse Theia). Позволяет пользователю получить помощь по использованию и настройке редактора.",
+            "version": "1.0.0",
+            "url": {
+                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-vscode-helper/SKILL.md",
+                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-vscode-helper/SKILL.md"
+            }
         }
     ],
-    "count": 6,
-    "lastUpdate": "2026-05-19T11:49:38Z"
+    "count": 9,
+    "lastUpdate": "2026-07-20T09:51:51Z"
 }
