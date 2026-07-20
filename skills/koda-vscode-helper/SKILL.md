@@ -1,6 +1,6 @@
 ---
 name: koda-vscode-helper
-description: "Справочный навык по Visual Studio Code (`vscode`, `code`) и производным от него продуктам (VSCodium и Eclipse Theia). Позволяет пользователю получить помощь по использованию и настройке редактора."
+description: "Справочный навык по Visual Studio Code (`vscode`, `code`) и производным от него продуктам (VSCodium и Eclipse Theia). Примени навык, чтобы помочь пользователю в использовании и настройке редактора, если у него возникает такой вопрос или проблема."
 license: MIT
 metadata:
   author: koda
