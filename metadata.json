@@ -99,24 +99,24 @@
         {
             "name": "koda-learn",
             "description": "Позволяет найти и установить дополнительные навыки (скиллы), расширяющие функционал Koda для решения конкретных задач. Подбери подходящие навыки для текущего проекта, чтобы помочь себе и пользователю. Навыки нужны для фокуса на способах решения конкретных задач и обогащения контекста дополнительными знаниями. Активируется инструментом `read_skill` (vscode/jetbrains) или `Activate Skill` (cli) с передачей аргумента `koda-learn`.",
-            "version": "1.3.0",
+            "version": "1.1.0",
             "license": "MIT",
             "metadata": {
                 "author": "koda",
-                "version": "1.3.0"
+                "version": "1.1.0"
             },
             "files": [
                 {
                     "name": "SKILL.md",
                     "path": "koda-learn",
                     "url": {
-                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-learn/SKILL.md",
-                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-learn/SKILL.md"
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/252828b8e14e81852b2d7d70597d983e405afb3a/skills/koda-learn/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/252828b8e14e81852b2d7d70597d983e405afb3a/skills/koda-learn/SKILL.md"
                     },
-                    "revision": "f1f14e9cd5e48dafd06579391ca4337584d9980f",
-                    "sha256": "b1eadec412d8d8048d6e02894d6bcbc225181c85c9159a6fc52bb3384ffef7e5",
-                    "size": 15434,
-                    "lastUpdate": "2026-11-06T14:24:45Z"
+                    "revision": "252828b8e14e81852b2d7d70597d983e405afb3a",
+                    "sha256": "45edbffbb401158af490e856cd2a0048bd315eecb08cc732ce07f8b9f9eae2d6",
+                    "size": 15657,
+                    "lastUpdate": "2026-11-06T14:55:49Z"
                 }
             ]
         },
@@ -158,13 +158,13 @@
                     "name": "SKILL.md",
                     "path": "koda-skill-maker",
                     "url": {
-                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-skill-maker/SKILL.md",
-                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-skill-maker/SKILL.md"
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/252828b8e14e81852b2d7d70597d983e405afb3a/skills/koda-skill-maker/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/252828b8e14e81852b2d7d70597d983e405afb3a/skills/koda-skill-maker/SKILL.md"
                     },
-                    "revision": "f1f14e9cd5e48dafd06579391ca4337584d9980f",
-                    "sha256": "2c4aa6063b23372ee2c5539b7ce86050e7b035fa42335df7c499fa9cfbf5da44",
-                    "size": 7816,
-                    "lastUpdate": "2026-11-06T14:24:45Z"
+                    "revision": "252828b8e14e81852b2d7d70597d983e405afb3a",
+                    "sha256": "bce3e3893ab1d0dfa309d42051afd96bef855e85ed196d00662b0fac82864a5a",
+                    "size": 8966,
+                    "lastUpdate": "2026-11-06T14:55:49Z"
                 }
             ]
         },
@@ -237,5 +237,5 @@
         }
     ],
     "count": 10,
-    "lastUpdate": "2026-11-06T14:39:27Z"
+    "lastUpdate": "2026-11-06T15:11:18Z"
 }
