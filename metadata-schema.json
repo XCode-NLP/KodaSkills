@@ -47,11 +47,6 @@
                     "minLength": 1,
                     "maxLength": 1024
                 },
-                "version": {
-                    "description": "Версия навыка",
-                    "type": "string",
-                    "minLength": 1
-                },
                 "license": {
                     "description": "Лицензия навыка: название лицензии или ссылка на файл лицензии в директории навыка",
                     "type": "string",

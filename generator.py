@@ -511,12 +511,6 @@ def extract_skill_metadata(
         print(f"Некорректное описание навыка в файле: {skill_path}")
         return None
 
-    # Извлекаем версию из metadata или устанавливаем значение по умолчанию
-    version = "1.0.0"
-    if isinstance(frontmatter.get('metadata'), dict):
-        version = frontmatter['metadata'].get('version', version)
-    version = str(version)
-
     # Необязательные поля frontmatter из спецификации Agent Skills
     license_name = read_optional_string(frontmatter, 'license', skill_path)
     compatibility = read_optional_string(frontmatter, 'compatibility', skill_path, 500)
@@ -564,7 +558,6 @@ def extract_skill_metadata(
     skill_entry = {
         "name": name,
         "description": description,
-        "version": version,
     }
 
     if license_name is not None:
