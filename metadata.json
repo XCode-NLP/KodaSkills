@@ -105,13 +105,13 @@
                     "name": "SKILL.md",
                     "path": "koda-learn",
                     "url": {
-                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/252828b8e14e81852b2d7d70597d983e405afb3a/skills/koda-learn/SKILL.md",
-                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/252828b8e14e81852b2d7d70597d983e405afb3a/skills/koda-learn/SKILL.md"
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/8101476efe3eb1eef3b4104b211c5593df4ce32b/skills/koda-learn/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/8101476efe3eb1eef3b4104b211c5593df4ce32b/skills/koda-learn/SKILL.md"
                     },
-                    "revision": "252828b8e14e81852b2d7d70597d983e405afb3a",
-                    "sha256": "45edbffbb401158af490e856cd2a0048bd315eecb08cc732ce07f8b9f9eae2d6",
-                    "size": 15657,
-                    "lastUpdate": "2026-11-06T14:55:49Z"
+                    "revision": "8101476efe3eb1eef3b4104b211c5593df4ce32b",
+                    "sha256": "35b3698f05fd1f1b7d9da1697c3f03e04ba09e3eac2baa67199825116b6fcb87",
+                    "size": 15728,
+                    "lastUpdate": "2026-11-06T16:03:39Z"
                 }
             ]
         },
@@ -227,5 +227,5 @@
         }
     ],
     "count": 10,
-    "lastUpdate": "2026-11-06T15:22:35Z"
+    "lastUpdate": "2026-11-06T16:04:00Z"
 }
