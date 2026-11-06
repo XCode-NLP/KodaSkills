@@ -4,93 +4,238 @@
             "name": "koda-cli-subagent",
             "description": "Навык делегирования подзадач субагенту koda-cli. Используй его, чтобы быстрее решить комплексные задачи из множества шагов благодаря параллельному запуску субагента. Запусти субагента, когда требуется множество изменений.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-cli-subagent/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-cli-subagent/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-cli-subagent",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-cli-subagent/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-cli-subagent/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "da470071cd83482e7841967224bd045686f6687889b38a5741cc8867949c3e33",
+                    "size": 5249,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-coder",
             "description": "Навык, который следует использовать в каждой задаче разработки. Примени этот навык, чтобы сосредоточиться на корректности решения задачи, избегая неопределённости в диалоге с пользователем и в результате работы.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-coder/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-coder/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-coder",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-coder/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-coder/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "c7e5f234f3687e0475d9c39767f84d2a60795b2a0f60b8e1cb40fa205ba5c27f",
+                    "size": 5097,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-helper",
             "description": "Справочный навык по продуктам Koda (KodaCode). Примени навык, чтобы помочь пользователю с продуктами и сервисами Koda. Предоставь помощь по использованию и настройке Koda, тарифам, моделям, лимитам, если у пользователя возникает такой вопрос или проблема.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-helper/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-helper/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-helper",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-helper/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-helper/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "bb5af76bfde893e7f919b4eaf4fa9cbbd1df75ab9d8c2b4a0b9c740903215fb1",
+                    "size": 13290,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-jetbrains-helper",
             "description": "Справочный навык по средам разработки компании JetBrains и производным от него продуктам (GIGAIDE, OpenIDE). Примени навык, чтобы помочь пользователю в использовании и настройке среды разработки (IDE), если у него возникает такой вопрос или проблема.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-jetbrains-helper/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-jetbrains-helper/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-jetbrains-helper",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-jetbrains-helper/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-jetbrains-helper/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "67f12ce842af7a5cf7bd7382c3f2fe26b68778fbd4c9459f85fcd8f3397c3d05",
+                    "size": 12985,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-learn",
             "description": "Позволяет найти и установить дополнительные навыки (скиллы), расширяющие функционал Koda для решения конкретных задач. Подбери подходящие навыки для текущего проекта, чтобы помочь себе и пользователю. Навыки нужны для фокуса на способах решения конкретных задач и обогащения контекста дополнительными знаниями. Активируется инструментом `read_skill` (vscode/jetbrains) или `Activate Skill` (cli) с передачей аргумента `koda-learn`.",
-            "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-learn/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-learn/SKILL.md"
-            }
+            "version": "1.3.0",
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.3.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-learn",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-learn/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-learn/SKILL.md"
+                    },
+                    "revision": "f1f14e9cd5e48dafd06579391ca4337584d9980f",
+                    "sha256": "b1eadec412d8d8048d6e02894d6bcbc225181c85c9159a6fc52bb3384ffef7e5",
+                    "size": 15434,
+                    "lastUpdate": "2026-11-06T14:24:45Z"
+                }
+            ]
         },
         {
             "name": "koda-plan",
             "description": "Навык декомпозирования сложных задач. Помоги пользователю декомпозировать задачу, определить подзадачи, составить план их выполнения и выполнить согласно плана. Используй другие доступные навыки, которые могут помочь в этом.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-plan/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-plan/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-plan",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-plan/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-plan/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "67f46b20bf6a64d3b3f4b0711fcf19ded54ef9959f8e4db97224b46aa0d78a73",
+                    "size": 10358,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-skill-maker",
             "description": "Мета-навык создания новых навыков для агентов по запросу пользователя. Создай уникальный навык для текущего проекта, если этого просит пользователь.",
-            "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-skill-maker/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-skill-maker/SKILL.md"
-            }
+            "version": "1.1.0",
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.1.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-skill-maker",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-skill-maker/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f1f14e9cd5e48dafd06579391ca4337584d9980f/skills/koda-skill-maker/SKILL.md"
+                    },
+                    "revision": "f1f14e9cd5e48dafd06579391ca4337584d9980f",
+                    "sha256": "2c4aa6063b23372ee2c5539b7ce86050e7b035fa42335df7c499fa9cfbf5da44",
+                    "size": 7816,
+                    "lastUpdate": "2026-11-06T14:24:45Z"
+                }
+            ]
         },
         {
             "name": "koda-todo",
             "description": "Позволяет управлять списком отложенных задач (todo-list). Собери текущие сведения в список подзадач, сохрани в файл и выполняй задачу далее пошагово.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-todo/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-todo/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-todo",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-todo/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-todo/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "e2ed4c20bf0f0df627715dda2fdbc0cf6090ca60c4f62d97396ccfde319c0ea3",
+                    "size": 2342,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-vscode-helper",
             "description": "Справочный навык по Visual Studio Code (`vscode`, `code`) и производным от него продуктам (VSCodium и Eclipse Theia). Примени навык, чтобы помочь пользователю в использовании и настройке редактора, если у него возникает такой вопрос или проблема.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-vscode-helper/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-vscode-helper/SKILL.md"
-            }
+            "license": "MIT",
+            "metadata": {
+                "author": "koda",
+                "version": "1.0.0"
+            },
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-vscode-helper",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-vscode-helper/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/f663016494109718d1deb95658f70a9ee3b7ff47/skills/koda-vscode-helper/SKILL.md"
+                    },
+                    "revision": "f663016494109718d1deb95658f70a9ee3b7ff47",
+                    "sha256": "7c35fdb0e40938932c12475615376f24a2eda2f9eed8c357a23164c7728ecd09",
+                    "size": 8200,
+                    "lastUpdate": "2026-07-20T10:03:57Z"
+                }
+            ]
         },
         {
             "name": "koda-zensical",
             "description": "Навык, который необходим для работы с движком документации Zensical. Для соответствующего проекта обязательно применяй эти инструкции, поскольку они позволят правильно писать и форматировать исходные файлы документации.",
             "version": "1.0.0",
-            "url": {
-                "web": "https://github.com/XCode-NLP/KodaSkills/blob/main/skills/koda-zensical/SKILL.md",
-                "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/main/skills/koda-zensical/SKILL.md"
-            }
+            "files": [
+                {
+                    "name": "SKILL.md",
+                    "path": "koda-zensical",
+                    "url": {
+                        "web": "https://github.com/XCode-NLP/KodaSkills/blob/b5a939b9ab24eeb040fd383a8262ad3adf3f2fcd/skills/koda-zensical/SKILL.md",
+                        "raw": "https://raw.githubusercontent.com/XCode-NLP/KodaSkills/b5a939b9ab24eeb040fd383a8262ad3adf3f2fcd/skills/koda-zensical/SKILL.md"
+                    },
+                    "revision": "b5a939b9ab24eeb040fd383a8262ad3adf3f2fcd",
+                    "sha256": "e41378f6560058a9489a62ab4aa79aba369bf4a012d13861aff38d56d6d88bc7",
+                    "size": 20419,
+                    "lastUpdate": "2026-07-20T10:32:29Z"
+                }
+            ]
         }
     ],
     "count": 10,
-    "lastUpdate": "2026-07-21T09:27:18Z"
+    "lastUpdate": "2026-11-06T14:39:27Z"
 }

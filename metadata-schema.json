@@ -8,64 +8,170 @@
             "description": "Массив метаданных навыков",
             "type": "array",
             "items": {
-                "description": "Описание метаданных навыка",
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "description": "Название навыка",
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 64
-                    },
-                    "description": {
-                        "description": "Описание навыка",
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 1024
-                    },
-                    "version": {
-                        "description": "Версия навыка",
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "url": {
-                        "type": "object",
-                        "properties": {
-                            "web": {
-                                "description": "Прямая ссылка на файл SKILL.md навыка в репозитории",
-                                "type": "string",
-                                "minLength": 1
-                            },
-                            "raw": {
-                                "description": "Прямая ссылка на сырое содержимое файла SKILL.md навыка в репозитории",
-                                "type": "string",
-                                "minLength": 1
-                            }
-                        },
-                        "required": [
-                            "web",
-                            "raw"
-                        ]
-                    }
-                },
-                "required": [
-                    "name",
-                    "description",
-                    "url"
-                ]
+                "$ref": "#/$defs/skill"
             }
         },
         "count": {
             "description": "Количество навыков в репозитории",
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0
         },
         "lastUpdate": {
-            "description": "Метка времени последнего обновления метаданных в формате RFC 3339 в часовом поясе UTC",
-            "type": "string"
+            "description": "Метка времени последнего обновления метаданных в формате RFC 3339 в часовом поясе UTC, например 2026-07-21T09:27:18Z",
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
         }
     },
     "required": [
+        "skills",
         "count",
         "lastUpdate"
-    ]
+    ],
+    "additionalProperties": false,
+    "$defs": {
+        "skill": {
+            "description": "Описание метаданных навыка",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Название навыка. Должно совпадать с именем директории навыка",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 64,
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "description": {
+                    "description": "Описание навыка",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1024
+                },
+                "version": {
+                    "description": "Версия навыка",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "license": {
+                    "description": "Лицензия навыка: название лицензии или ссылка на файл лицензии в директории навыка",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "compatibility": {
+                    "description": "Требования к окружению: продукт, системные пакеты, доступ к сети и прочее",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                },
+                "metadata": {
+                    "description": "Дополнительные свойства навыка: карта из строковых ключей в строковые значения",
+                    "type": "object",
+                    "minProperties": 1,
+                    "propertyNames": {
+                        "minLength": 1
+                    },
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "allowed-tools": {
+                    "description": "Инструменты, заранее разрешённые навыку: имена через пробел",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "files": {
+                    "description": "Файлы навыка, включая SKILL.md и дополнительные файлы",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/file"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "files"
+            ],
+            "additionalProperties": false
+        },
+        "file": {
+            "description": "Файл навыка",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Имя файла без пути (например, SKILL.md, makestuff.sh)",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 255,
+                    "pattern": "^[^/]+$"
+                },
+                "path": {
+                    "description": "Путь к директории файла относительно skills/ без имени файла (например, <имя_навыка> или <имя_навыка>/scripts)",
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^[^/]+(?:/[^/]+)*$"
+                },
+                "url": {
+                    "description": "Ссылки на файл в репозитории",
+                    "type": "object",
+                    "properties": {
+                        "web": {
+                            "description": "Прямая ссылка на файл в репозитории",
+                            "type": "string",
+                            "minLength": 1,
+                            "format": "uri",
+                            "pattern": "^https://"
+                        },
+                        "raw": {
+                            "description": "Прямая ссылка на сырое содержимое файла в репозитории",
+                            "type": "string",
+                            "minLength": 1,
+                            "format": "uri",
+                            "pattern": "^https://"
+                        }
+                    },
+                    "required": [
+                        "web",
+                        "raw"
+                    ],
+                    "additionalProperties": false
+                },
+                "revision": {
+                    "description": "Хэш коммита, в котором файл последний раз изменялся. Ссылки url.web и url.raw привязаны к этому коммиту, поэтому отдают именно ту версию файла, для которой посчитан sha256. Для файлов вне Git поле отсутствует, а ссылки указывают на ветку main",
+                    "type": "string",
+                    "minLength": 40,
+                    "maxLength": 40,
+                    "pattern": "^[0-9a-f]{40}$"
+                },
+                "sha256": {
+                    "description": "Хэш SHA-256 содержимого файла в шестнадцатеричном виде: 64 символа в нижнем регистре",
+                    "type": "string",
+                    "minLength": 64,
+                    "maxLength": 64,
+                    "pattern": "^[0-9a-f]{64}$"
+                },
+                "size": {
+                    "description": "Размер файла в байтах",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "lastUpdate": {
+                    "description": "Метка времени последнего изменения файла в формате RFC 3339 в часовом поясе UTC, например 2026-07-21T09:27:18Z",
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+                }
+            },
+            "required": [
+                "name",
+                "path",
+                "url",
+                "sha256",
+                "size",
+                "lastUpdate"
+            ],
+            "additionalProperties": false
+        }
+    }
 }
