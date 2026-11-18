@@ -1,0 +1,33 @@
+---
+name: bitrix24-portal
+description: 'Настройка портала коробки Битрикс24 из /local: страницы, SidePanel, левое меню, сотрудники, оргструктура humanresources, файлы Диска, группы и проекты.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Портал коробки Битрикс24
+
+Scope: Bitrix24 on-premise · Verified: intranet 26.1900.0, humanresources 26.600.0, disk 26.1375.0, socialnetwork 26.400.0, main 26.1000.0
+
+Перед PHP-кодом один раз прочитай `bitrix-framework`.
+
+| Задача | Открыть |
+| --- | --- |
+| Своя страница, слайдер, панель, размещение файлов и URL | `rules/pages.md` |
+| Пункты левого меню | `rules/left-menu.md` |
+| Сотрудник, экстранет, администратор, отделы и руководители | `rules/users-structure.md` |
+| Диски пользователей/групп, загрузка, прикрепление файлов | `rules/disk.md` |
+| Группы, проекты, коллабы: участники и доступ | `rules/workgroups.md` |
+
+Связанные скиллы: `bitrix-ui` (окна, грид, фильтр, выбор сущности), `bitrix24-crm`, `bitrix24-tasks`, `bitrix24-im`, `bitrix24-rest-api`.
+
+## Общие правила
+
+- `intranet`, `humanresources`, `socialnetwork`, `extranet`, `disk` поставляются с Битрикс24. Подключай каждый через `Loader::includeModule()`. Не помещай портальный код в общие модули обычных сайтов.
+- Шаблон портала — `bitrix24`. Запросы слайдера (`IFRAME=Y`) и AJAX не получают его вывод. Слайдер оборачивай в `bitrix:ui.sidepanel.wrapper`, AJAX направляй контроллеру.
+- Интранет перенаправляет экстранет-пользователей на экстранет-сайт (`CExtranet::ExtranetRedirect()`; исключения `/pub/`, `/rest/` и префиксы ссылок Диска). Страницы внешних пользователей размещай на экстранет-сайте.
+- Композит портала (`intranet/composite_enabled`) кеширует каркас для пользователя; `#page-area` динамический, содержимое страницы формируется всегда. Персональный вывод держи внутри страницы.
+- Отделы и руководителей получай из публичного API humanresources. `UF_DEPARTMENT` — отстающая копия для совместимости.
+- Назначение отделов HR, сервис участников socialnetwork и `Folder::uploadFile()` не проверяют права. Выполняй проверку перед вызовом.

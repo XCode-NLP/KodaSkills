@@ -1,0 +1,29 @@
+---
+name: 1c-mxl-validate
+description: Валидация макета табличного документа (MXL). Используй после создания или модификации макета для проверки корректности
+allowed-tools: "run_terminal_command read_file"
+license: MIT
+metadata:
+  author: nikolay-shirokov
+  source: https://github.com/nikolay-shirokov/cc-1c-skills
+---
+
+# /1c-mxl-validate — валидация макета табличного документа (MXL)
+
+Проверяет Template.xml на структурные ошибки: индексы, ссылки на палитры, диапазоны именованных областей и объединений, согласованность ячеек-полей ввода.
+
+## Параметры
+
+| Параметр      | Обяз. | Умолч. | Описание                                 |
+|---------------|:-----:|---------|--------------------------------------------|
+| TemplatePath  | да    | —       | Путь к макету (директория или Template.xml) |
+| Detailed      | нет   | —       | Подробный вывод (все проверки, включая успешные) |
+| MaxErrors     | нет   | 20      | Остановиться после N ошибок                |
+
+## Команда
+
+```powershell
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/mxl-validate.ps1" -TemplatePath "Catalogs/Номенклатура/Templates/Макет"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/mxl-validate.ps1" -TemplatePath "src/МояОбработка/Templates/ПечатнаяФорма"
+```
+

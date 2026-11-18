@@ -1,0 +1,25 @@
+---
+name: bitrix24-ai-tools
+description: 'Документация REST Битрикс24 через MCP b24-dev-mcp (bitrix-search, bitrix-method-details) и разработка в Alaio Vibecode (/v1/me, vibecodeconnector). Для проверки методов, MCP и приложений.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Инструменты ИИ для Битрикс24
+
+Scope: Bitrix24 cloud + on-premise · Verified: b24restdocs 2026-10-30, vibecodeconnector 26.900.0, main 26.1000.0
+
+| Задача | Открыть |
+| --- | --- |
+| Проверить метод/событие REST, подключить документацию MCP | `rules/mcp.md` |
+| Создать приложение в Alaio Vibecode, выбрать ключ, подключить коробку | `rules/vibecode.md` |
+
+## Общие правила
+
+- Для обычного REST-клиента читай `bitrix24-rest-api`; для серверного PHP-модуля коробки перед кодом один раз прочитай `bitrix-framework`.
+- Если MCP доступен, проверяй описание каждого нового или изменяемого метода перед вызовом. Если недоступен, используй официальную страницу метода.
+- Документация облака не доказывает доступность API конкретной коробки. Сверяй версию, установленные модули, scopes и опубликованные методы портала.
+- Не передавай документационному MCP вебхуки, токены, ключи и клиентские данные.
+- Vibecode — платформа разработки; Vibe — стартовая страница (`landing.repowidget.*`); Vibe+ — подписка облака. Это разные сущности.

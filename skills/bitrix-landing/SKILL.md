@@ -1,0 +1,31 @@
+---
+name: bitrix-landing
+description: 'Модуль landing (Сайты24): Site, Landing, Block, публикация и предпросмотр. Используй для /local/blocks, счётчиков, метаданных и блоков landing.repo REST.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Сайты Landing (`landing`)
+
+Baseline: main 23.0+ · Verified: landing 26.1600.0, main 26.1000.0
+
+Перед PHP-кодом прочитай `bitrix-framework`, если ещё не читал его в этой задаче. По таблице открой только нужный файл правил.
+
+Блочные сайты: Сайты24, магазины, базы знаний, Вайб. Классические шаблоны, меню и включаемые области: `bitrix-cms-basics`.
+
+| Задача | Читать |
+| --- | --- |
+| Типы сайтов, страницы и блоки из PHP, собственные блоки, URL в содержимом | `rules/pages-blocks.md` |
+| Публикация, ссылки предпросмотра, корзина, события счётчиков / метаданных, права | `rules/publish-hooks.md` |
+| Репозиторные блоки REST, пакет PublicAction, файлы Диска, изображения | `rules/rest-security.md` |
+
+## Общие правила
+
+- `Loader::includeModule('landing')`; меняй данные через `Site` / `Landing` / `Block`, без SQL в `b_landing_*`.
+- Свои блоки — в `/local/blocks/<namespace>/<code>/`; не меняй `/bitrix/blocks/` и модуль.
+- Ссылки блока должны иметь разрешённую схему, иначе сохраняются как `''` без ошибки (**Since landing 26.1000**).
+- Методы записи возвращают `false`/`Result`, заполняют `$landing->getError()`: проверяй; исключения редки.
+- Не наследуй классы landing ради переопределения защищённых методов: сигнатуры меняются в минорных версиях.
+- Сложную PHP-логику страницы вынеси в компонент классической страницы (`bitrix-components`).

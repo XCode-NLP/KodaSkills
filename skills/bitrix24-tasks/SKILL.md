@@ -1,0 +1,31 @@
+---
+name: bitrix24-tasks
+description: 'Задачи в PHP коробки Битрикс24: V2-команды AddTaskCommand, TaskProvider, права и события OnTaskAdd. Для создания, чтения, изменения задач, участников и чек-листов из /local.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Задачи Битрикс24: серверный PHP
+
+Scope: Bitrix24 on-premise · Verified: tasks 26.800.0, main 26.1000.0
+
+Перед PHP-кодом один раз прочитай `bitrix-framework`.
+
+| Задача | Открыть |
+| --- | --- |
+| Выбор API, создание, изменение, завершение, удаление и ошибки | `rules/writing.md` |
+| Одна задача/список: фильтры, порядок, страницы и даты | `rules/reading.md` |
+| Участники, сроки/часовые пояса, чек-листы, теги, проекты, шаблоны, комментарии | `rules/details.md` |
+| Контракты БП/REST: статус, длительность, инициатор шаблона | `rules/integrations.md` |
+| Проверки доступа, события/аргументы, соответствие REST | `rules/access-events.md` |
+
+## Общие правила
+
+- Записывай через V2-команды (`AddTaskCommand`, `UpdateTaskCommand` …); legacy `CTaskItem`/`CTasks` используют те же V2-сервисы. Прямая запись `TaskTable`, участников и чек-листов пропускает счётчики, чат, индекс, события и корзину.
+- Сами команды обычно не проверяют права. Перед `run()` проверяй `TaskAccessService`/`TaskAccessController` инициатора; отдельные команды могут иметь собственную проверку.
+- Передавай инициатора явно: `userId` конфигурации. У агента/CLI нет авторизованного `$USER`; `CTasks::Add` без `USER_ID` подставляет пользователя 1.
+- Даты V2 — Unix timestamp (`deadlineTs`). В фоне не передавай строки формата сайта.
+- Изолируй V2 в одном классе доступа `/local`: команды используют `V2\Internal\…`, сущности/конфигурации меняются. Проверено на tasks 26.800.0; если `class_exists(AddTaskCommand::class)` ложно, используй `CTaskItem`.
+- Комментарий новой карточки — сообщение чата задачи (`rules/details.md`, `bitrix24-im`).

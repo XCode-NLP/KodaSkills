@@ -1,0 +1,38 @@
+---
+name: bitrix-logger
+description: 'Используй для PSR-3 логирования в Битриксе: Diag\FileLogger, LoggerFactory, секция loggers и форматы журналов. Передача LoggerInterface сервисам и защита секретов в логах.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Логирование (PSR-3)
+
+Baseline: main 23.0+ · Verified: main 26.1000.0
+
+Перед PHP-кодом прочитай `bitrix-framework`, если ещё не читал его в этой задаче.
+В таблице выбери только нужный `rules/*.md`; пути относительны каталогу скилла.
+
+Код зависит от `Psr\Log\LoggerInterface`; реализация выбирается в секции `loggers` файла `.settings.php`. `AddMessage2Log()` — только для совместимости.
+
+
+| Задача | Читать |
+| --- | --- |
+| Получить/включить логгер, передать в сервис | `rules/factory.md` |
+| Секция `loggers`, фабрики, ID логгеров ядра | `rules/configuration.md` |
+| Выбрать реализацию/формат, записать сообщение, Monolog | `rules/writing.md` |
+
+## Основные правила
+
+- Бизнес-код получает `LoggerInterface`; настройка конкретной реализации находится вне сервиса.
+- Секреты и персональные данные не должны попадать в текст, контекст, заголовки и URL журналов.
+- HTTP-трафик по умолчанию не записывается. Безопасная локальная диагностика: `bitrix-http-client` → `rules/config-security.md`.
+
+## Проверка
+
+- [ ] Сервисы получают `LoggerInterface` (по умолчанию `NullLogger`), без `new FileLogger()` внутри бизнес-логики.
+- [ ] ID логгеров имеют префикс модуля; при `LoggerFactory` включены через `LoggerRegistry`.
+- [ ] Файлы журналов находятся вне `DOCUMENT_ROOT`, задан размер ротации.
+- [ ] Сообщения и контекст не содержат паролей, токенов и персональных данных.
+- [ ] При `JsonLinesFormatter` текст сообщения добавлен в контекст.

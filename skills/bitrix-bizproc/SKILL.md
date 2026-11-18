@@ -1,0 +1,30 @@
+---
+name: bitrix-bizproc
+description: 'Бизнес-процессы в PHP коробки: запуск CBPDocument/Starter, свои действия в /local/activities и триггеры, права шаблонов. Для согласований, роботов и обработки документов.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Бизнес-процессы (`bizproc`)
+
+Baseline: main 23.0+ · Verified: bizproc 26.1700.0, bizprocdesigner 26.1100.0, main 26.1000.0
+
+Перед PHP-кодом один раз прочитай `bitrix-framework`. Исполнение, документы и действия находятся в `bizproc`; редактор — в `bizprocdesigner` (нужна возможность `BizProc`). Подключи `bizproc` и модуль документа (`crm`, `lists`, …).
+
+| Задача | Открыть |
+| --- | --- |
+| Запуск, остановка, удаление, внешние события, ID документов, `Starter` | `rules/start-stop.md` |
+| Своё действие: каталог, описание, класс, зарезервированные имена, ожидание события | `rules/custom-activities.md` |
+| Свои триггеры узлового дизайнера | `rules/triggers.md` |
+| Права шаблонов, контроллеры дизайнера, импорт, сервис шаблонов | `rules/templates-access.md` |
+| Зависшие паузы, ошибки, журнал, очистка, агенты и Messenger | `rules/runtime-ops.md` |
+
+## Общие правила
+
+- ID документа: `[moduleId, entity, documentId]`, тип: `[moduleId, entity, documentType]`. Бери тройки из модуля документа или существующего шаблона.
+- Методы `CBPDocument` возвращают ошибки через `$errors` по ссылке. Проверяй его после каждого вызова; прочие исключения также возможны.
+- Перед ручным запуском и в своих контроллерах проверяй права: `CBPDocument::canUserOperateDocument()` / `canUserOperateDocumentType()`.
+- Согласования и состояния документа выполняй через bizproc. Периодическую синхронизацию и тяжёлый ввод-вывод выноси в агенты/Messenger (`bitrix-background-jobs`), из `execute()` ставь задачу в очередь.
+- Имена классов действий и помощников начинай с префикса поставщика. Не переиспользуй имена членов `CBPActivity`.

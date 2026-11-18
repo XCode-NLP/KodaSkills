@@ -1,0 +1,29 @@
+---
+name: bitrix-iblocks
+description: 'Инфоблоки Битрикс: CIBlock, CIBlockElement, ORM-классы элементов по API_CODE, разделы, свойства и права. Используй для настройки инфоблока, выбора ORM или старого API и SEO-шаблонов.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Информационные блоки (`iblock`)
+
+Baseline: main 23.0+ · Verified: iblock 26.100.0, main 26.1000.0
+
+Перед PHP-кодом прочитай `bitrix-framework`, если ещё не читал его в этой задаче. По таблице открой только нужный файл правил.
+
+| Задача | Читать |
+| --- | --- |
+| ID, границы ORM и классического API, создание, версия хранения, права | `rules/basics.md` |
+| Компилируемые классы элементов / разделов, значения свойств, побочные действия ORM | `rules/orm-entities.md` |
+| Свойства: список, справочник, свой тип; запись разделов / элементов, `CODE` | `rules/properties-sections-elements.md` |
+| Выборки, фильтры свойств, SEO-значения, производительность | `rules/query-seo-perf.md` |
+
+## Общие правила
+
+- `Loader::includeModule('iblock')`. Для новых инфоблоков задавай `API_CODE`. Для элементов и разделов по умолчанию используй компилируемый D7 ORM. Базовый `ElementTable` только для чтения.
+- Структура (тип, инфоблок, свойство) — `CIBlockType`/`CIBlock`/`CIBlockProperty`. Для элементов и разделов классический API допустим только при подтверждённом ограничении D7. Укажи конкретную причину в коде.
+- ORM не проверяет права инфоблока. См. `rules/basics.md`.
+- ID инфоблоков, свойств, значений списка различаются между средами: находи по `CODE`/`API_CODE`/`XML_ID`.
+- Справочники HL: `bitrix-highloadblock`; цены, SKU, остатки: `bitrix-catalog`.

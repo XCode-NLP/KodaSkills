@@ -1,0 +1,30 @@
+---
+name: bitrix-routing
+description: 'Используй для URL Битрикса: маршруты D7 в /local/routes, RoutingConfigurator, параметры и контроллеры публичных страниц. Подключение сервера, кеш и перенос urlrewrite.php.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Маршрутизация Битрикса
+
+Baseline: main 23.0+ · Verified: main 26.1000.0
+
+Перед PHP-кодом прочитай `bitrix-framework`, если ещё не читал его в этой задаче.
+В таблице выбери только нужный `rules/*.md`; пути относительны каталогу скилла.
+
+| Задача | Читать |
+| --- | --- |
+| Правило веб-сервера, секция `routing`, файлы маршрутов модуля | `rules/setup.md` |
+| `web.php`, HTTP-методы, параметры, имена, группы, замыкания | `rules/routes-handlers.md` |
+| Публичная страница контроллера, `PublicPageController` | `rules/public-pages.md` |
+| Порядок выбора, кеш компиляции, выбор сайта, перенос `urlrewrite.php` | `rules/matching-legacy.md` |
+
+## Обязательные правила
+
+- Свои маршруты держи только в `/local/routes/*.php`, перечисляя имена файлов в `routing.config`. Файлы маршрутов модулей подключай оттуда через `require`.
+- Обработчики тонкие: `[Controller::class, 'action']` для авторизации, CSRF и стабильного контракта. Защищай контроллеры маршрутов фильтрами (`bitrix-controllers`), не через `->middleware()`.
+- Контроллеры маршрутов работают в `SCOPE_AJAX`: стандартные `Authentication` и `Csrf` действуют и на GET-страницах. Удаляй их для конкретного действия публичной страницы только для чтения.
+- Для изменения состояния задавай HTTP-метод явно (`get`/`post`/…) и `->where()` для каждого параметра.
+- Физический файл с тем же путём приоритетнее маршрута: веб-сервер отдаёт его до `routing_index.php`.

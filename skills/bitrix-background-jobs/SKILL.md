@@ -1,0 +1,32 @@
+---
+name: bitrix-background-jobs
+description: 'Используй для отложенной работы Битрикса: агенты CAgent, cron, Application::addBackgroundJob после ответа и очереди Messenger (messenger:consume). Выбор механизма, повторы и ошибки.'
+license: MIT
+metadata:
+  author: bxmaximum
+  source: https://github.com/bxmaximum/bitrix-framework-skills
+---
+
+# Фоновые задания
+
+Baseline: main 23.0+ · Verified: main 26.1000.0
+
+Перед PHP-кодом прочитай `bitrix-framework`, если ещё не читал его в этой задаче.
+В таблице выбери только нужный `rules/*.md`; пути относительны каталогу скилла.
+
+| Задача | Читать |
+| --- | --- |
+| Периодическое или отложенное задание, агенты на cron, долгие агенты | `rules/agents.md` |
+| Короткая работа после ответа | `rules/background-job.md` |
+| Очередь: сообщение, получатель, отправка, повторы | `rules/messenger.md` |
+| Настройки очередей, брокеры, `messenger:consume`, очереди ядра | `rules/messenger-config.md` |
+
+Выбор: расписание → агент на cron; несколько секунд после ответа → `addBackgroundJob`; повторы, объём, параллельные исполнители → Messenger (**Since main 25.100.300**, альфа); разовая долгая миграция → консольная команда (`bitrix-console-commands`).
+
+## Обязательные правила
+
+- Фоновый код не имеет контекста пользователя: агенты и получатели устанавливают `global $USER = null`; не используй `$_SESSION`/cookies. Передавай ID пользователя/сайта явно.
+- На хитах агенты, Messenger в режиме `web` и `addBackgroundJob()` выполняются после отправки ответа, `OnAfterEpilog` и `session_write_close()`, с пулом БД, переключённым на master.
+- Код задания только получает сервис через `ServiceLocator::getInstance()->get()` и вызывает его (DI конструктора агента недоступен — `bitrix-framework`).
+- Задания должны быть идемпотентными: агент может запуститься параллельно дважды, сообщение может прийти повторно.
+- Ошибки записывай через PSR-3 (`bitrix-logger`); свои агенты удаляй при удалении модуля.
