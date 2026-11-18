@@ -239,15 +239,25 @@ def read_git_blobs(repo_root: Path, specs: dict[str, str]) -> dict[str, bytes]:
 
 
 class FileRevision(NamedTuple):
-    """Последний коммит, изменивший файл."""
+    """Коммит, изменивший файл."""
 
     commit: str
     date: str
 
 
-def get_file_revisions(repo_root: Path) -> dict[str, FileRevision]:
+class RepoHistory(NamedTuple):
+    """История файлов репозитория по данным Git."""
+
+    last: dict[str, FileRevision]
+    """Последний коммит, изменивший файл."""
+
+    first: dict[str, FileRevision]
+    """Первый коммит, добавивший файл."""
+
+
+def get_file_history(repo_root: Path) -> RepoHistory:
     """
-    Собирает последние коммиты для файлов репозитория.
+    Собирает историю коммитов для файлов репозитория.
 
     Позволяет получить стабильные метки времени и хэши коммитов независимо от
     времени клонирования. Для мелких клонов без истории данные будут неполными.
@@ -256,8 +266,11 @@ def get_file_revisions(repo_root: Path) -> dict[str, FileRevision]:
         repo_root: Путь к корню репозитория
 
     Returns:
-        Словарь «путь относительно корня репозитория» → последний коммит файла
+        История файлов: последний и первый коммиты для каждого пути
+        относительно корня репозитория
     """
+    empty = RepoHistory(last={}, first={})
+
     try:
         completed = subprocess.run(
             [
@@ -274,44 +287,76 @@ def get_file_revisions(repo_root: Path) -> dict[str, FileRevision]:
         )
     except (OSError, subprocess.CalledProcessError):
         print("Предупреждение: не удалось получить историю Git, используется время изменения файлов")
-        return {}
+        return empty
 
-    revisions: dict[str, FileRevision] = {}
+    last: dict[str, FileRevision] = {}
+    first: dict[str, FileRevision] = {}
     current: FileRevision | None = None
 
+    # Журнал отдаётся от свежих коммитов к старым, поэтому первая встреченная
+    # запись пути — самая свежая, а последняя — самая старая
     for line in completed.stdout.splitlines():
         if line.startswith('\x00'):
             commit, _, date = line[1:].strip().partition(' ')
             current = FileRevision(commit=commit, date=to_utc_timestamp(date))
         elif current and line.strip():
-            # Первая встреченная запись — самая свежая, поэтому setdefault
-            revisions.setdefault(line.strip(), current)
+            path = line.strip()
+            last.setdefault(path, current)
+            first[path] = current
 
-    return revisions
+    return RepoHistory(last=last, first=first)
 
 
-def file_last_update(file_path: Path, repo_root: Path, revisions: dict[str, FileRevision]) -> str:
+def file_timestamps(
+    file_path: Path,
+    repo_root: Path,
+    history: RepoHistory,
+) -> tuple[str, str]:
     """
-    Определяет метку времени последнего изменения файла.
+    Определяет метки времени добавления и последнего изменения файла.
 
-    Приоритет у даты последнего коммита, изменявшего файл. Если истории нет,
-    используется время изменения файла в файловой системе.
+    Приоритет у дат коммитов Git. Если истории нет, используется время
+    изменения файла в файловой системе.
 
     Args:
         file_path: Путь к файлу
         repo_root: Путь к корню репозитория
-        revisions: Последние коммиты файлов репозитория
+        history: История файлов репозитория
 
     Returns:
-        Дата в формате ГГГГ-ММ-ДДTЧЧ:ММ:ССZ
+        Кортеж «добавлен», «обновлён» в формате ГГГГ-ММ-ДДTЧЧ:ММ:ССZ
     """
     relative_path = file_path.relative_to(repo_root).as_posix()
-    revision = revisions.get(relative_path)
-    if revision:
-        return revision.date
+    first = history.first.get(relative_path)
+    last = history.last.get(relative_path)
+
+    if first and last:
+        return first.date, last.date
 
     modified = datetime.fromtimestamp(file_path.stat().st_mtime, tz=timezone.utc)
-    return modified.strftime(TIMESTAMP_FORMAT)
+    fallback = modified.strftime(TIMESTAMP_FORMAT)
+
+    return fallback, fallback
+
+
+def skill_timestamps(file_timestamps_map: dict[Path, tuple[str, str]]) -> tuple[str, str]:
+    """
+    Определяет метки времени добавления и последнего обновления навыка.
+
+    Навык добавлен вместе со своим самым старым файлом и обновлён вместе с
+    самым свежим из них.
+
+    Args:
+        file_timestamps_map: Метки времени файлов навыка
+
+    Returns:
+        Кортеж «добавлен», «обновлён» в формате ГГГГ-ММ-ДДTЧЧ:ММ:ССZ
+    """
+    # Метки времени в формате RFC 3339 в UTC сравниваются лексикографически
+    return (
+        min(added for added, _ in file_timestamps_map.values()),
+        max(updated for _, updated in file_timestamps_map.values()),
+    )
 
 
 def has_uncommitted_changes(repo_root: Path) -> bool:
@@ -404,7 +449,6 @@ def read_optional_string(
     frontmatter: dict[str, Any],
     field: str,
     skill_path: Path,
-    max_length: int | None = None,
 ) -> str | None:
     """
     Читает необязательное строковое поле frontmatter.
@@ -416,7 +460,6 @@ def read_optional_string(
         frontmatter: Разобранный frontmatter
         field: Имя поля
         skill_path: Путь к SKILL.md для сообщений об ошибках
-        max_length: Максимальная длина значения, если она ограничена
 
     Returns:
         Значение поля или None, если поле отсутствует или некорректно
@@ -436,10 +479,6 @@ def read_optional_string(
         print(f"Поле {field} пустое и пропущено: {skill_path}")
         return None
 
-    if max_length is not None and len(value) > max_length:
-        print(f"Поле {field} длиннее {max_length} символов и пропущено: {skill_path}")
-        return None
-
     return value
 
 
@@ -447,7 +486,7 @@ def extract_skill_metadata(
     skill_dir: Path,
     repo_root: Path,
     repo_url: str,
-    revisions: dict[str, FileRevision],
+    history: RepoHistory,
 ) -> dict[str, Any] | None:
     """
     Извлекает метаданные навыка из директории навыка.
@@ -456,7 +495,7 @@ def extract_skill_metadata(
         skill_dir: Путь к директории навыка
         repo_root: Путь к корню репозитория
         repo_url: URL репозитория
-        revisions: Последние коммиты файлов репозитория
+        history: История файлов репозитория
 
     Returns:
         Словарь с метаданными навыка или None, если данные некорректны
@@ -475,7 +514,7 @@ def extract_skill_metadata(
     blob_specs = {}
     for file_path in skill_files:
         relative_to_repo = file_path.relative_to(repo_root).as_posix()
-        revision = revisions.get(relative_to_repo)
+        revision = history.last.get(relative_to_repo)
         if revision is not None:
             blob_specs[relative_to_repo] = f"{revision.commit}:{relative_to_repo}"
 
@@ -513,17 +552,16 @@ def extract_skill_metadata(
 
     # Необязательные поля frontmatter из спецификации Agent Skills
     license_name = read_optional_string(frontmatter, 'license', skill_path)
-    compatibility = read_optional_string(frontmatter, 'compatibility', skill_path, 500)
-    allowed_tools = read_optional_string(frontmatter, 'allowed-tools', skill_path)
     metadata_map = build_skill_metadata_map(frontmatter, skill_path)
 
     files = []
+    timestamps_by_file: dict[Path, tuple[str, str]] = {}
 
     for file_path in skill_files:
         relative_to_repo = file_path.relative_to(repo_root).as_posix()
         # Путь относительно skills/ без имени файла: <имя_навыка> или <имя_навыка>/scripts
         relative_dir = file_path.parent.relative_to(skills_dir).as_posix()
-        revision = revisions.get(relative_to_repo)
+        revision = history.last.get(relative_to_repo)
 
         if revision is None:
             print(f"Предупреждение: файл не найден в истории Git: {relative_to_repo}")
@@ -547,13 +585,18 @@ def extract_skill_metadata(
         if revision is not None:
             file_entry["revision"] = revision.commit
 
+        added, updated = file_timestamps(file_path, repo_root, history)
+        timestamps_by_file[file_path] = (added, updated)
+
         file_entry.update({
             "sha256": sha256_hex(content),
             "size": len(content),
-            "lastUpdate": file_last_update(file_path, repo_root, revisions),
+            "updatedAt": updated,
         })
 
         files.append(file_entry)
+
+    added_at, updated_at = skill_timestamps(timestamps_by_file)
 
     skill_entry = {
         "name": name,
@@ -563,15 +606,11 @@ def extract_skill_metadata(
     if license_name is not None:
         skill_entry["license"] = license_name
 
-    if compatibility is not None:
-        skill_entry["compatibility"] = compatibility
-
     if metadata_map:
         skill_entry["metadata"] = metadata_map
 
-    if allowed_tools is not None:
-        skill_entry["allowed-tools"] = allowed_tools
-
+    skill_entry["addedAt"] = added_at
+    skill_entry["updatedAt"] = updated_at
     skill_entry["files"] = files
 
     return skill_entry
@@ -630,7 +669,7 @@ def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
         return {}
 
     skills = []
-    revisions = get_file_revisions(repo_root)
+    history = get_file_history(repo_root)
 
     if has_uncommitted_changes(repo_root):
         print(
@@ -644,7 +683,7 @@ def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
             skill_dir,
             repo_root,
             repo_url,
-            revisions,
+            history,
         )
         if skill_metadata:
             skills.append(skill_metadata)
@@ -653,7 +692,7 @@ def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
     return {
         "skills": skills,
         "count": len(skills),
-        "lastUpdate": datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT)
+        "updatedAt": datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT),
     }
 
 
