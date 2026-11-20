@@ -116,21 +116,21 @@ def find_skill_files(skill_dir: Path) -> list[Path]:
     return files
 
 
-def generate_urls(
+def generate_raw_url(
     relative_path: str,
     repo_url: str,
     ref: str = 'main',
-) -> dict[str, str]:
+) -> str:
     """
-    Генерирует URL для файла навыка.
+    Генерирует ссылку на сырое содержимое файла навыка.
 
     Args:
         relative_path: Путь к файлу относительно корня репозитория
         repo_url: URL репозитория
-        ref: Ветка или хэш коммита, к которому привязываются ссылки
+        ref: Ветка или хэш коммита, к которому привязывается ссылка
 
     Returns:
-        Словарь с полями web и raw
+        Прямая ссылка на сырое содержимое файла
     """
     repo_url = repo_url.rstrip('/')
     if repo_url.endswith('.git'):
@@ -139,14 +139,7 @@ def generate_urls(
     encoded_path = quote(relative_path, safe='/')
     repo_slug = repo_url.split('github.com/', 1)[-1].strip('/')
 
-    # Формируем URL для GitHub
-    web_url = f"{repo_url}/blob/{ref}/{encoded_path}"
-    raw_url = f"https://raw.githubusercontent.com/{repo_slug}/{ref}/{encoded_path}"
-
-    return {
-        "web": web_url,
-        "raw": raw_url
-    }
+    return f"https://raw.githubusercontent.com/{repo_slug}/{ref}/{encoded_path}"
 
 
 def to_utc_timestamp(value: str) -> str:
@@ -573,13 +566,15 @@ def extract_skill_metadata(
         file_entry = {
             "name": file_path.name,
             "path": relative_dir,
-            # Ссылки привязываются к коммиту файла, поэтому всегда отдают ту версию,
+            # Ссылка привязывается к коммиту файла, поэтому всегда отдаёт ту версию,
             # для которой посчитан sha256
-            "url": generate_urls(
-                relative_to_repo,
-                repo_url,
-                revision.commit if revision else 'main',
-            ),
+            "url": {
+                "raw": generate_raw_url(
+                    relative_to_repo,
+                    repo_url,
+                    revision.commit if revision else 'main',
+                ),
+            },
         }
 
         if revision is not None:
@@ -691,7 +686,6 @@ def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
 
     return {
         "skills": skills,
-        "count": len(skills),
         "updatedAt": datetime.now(timezone.utc).strftime(TIMESTAMP_FORMAT),
     }
 
@@ -728,12 +722,13 @@ def main():
     # Записываем metadata.json
     output_path = repo_root / 'metadata.json'
 
+    # Минифицированный вывод: без отступов и лишних пробелов, чтобы экономить место
     with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(metadata, f, ensure_ascii=False, indent=4)
+        json.dump(metadata, f, ensure_ascii=False, separators=(',', ':'))
         f.write('\n')
 
     print(f"\nФайл metadata.json успешно создан: {output_path}")
-    print(f"Обработано навыков: {metadata['count']}")
+    print(f"Обработано навыков: {len(metadata['skills'])}")
 
     return 0
 
