@@ -1,0 +1,3 @@
+# Миграция
+
+Сверь пулы, эндпоинты и возможности через pools/capabilities. Регион SigV4 равен выбранному пулу; адресация задаётся профилем. Передавай данные потоково; presigned URL и multipart используй только при соответствующих capabilities. Copy работает в пределах эндпоинта. Сверяй размеры и контрольные суммы до удаления источника. Возможности целевого облака проверяй по документации: https://beget.com/ru/kb/manual/obektnoe-hranilishche-s3-v-beget https://beget.com/ru/kb/faq/cloud/podklyuchenie-k-obektnomu-hranilishchu-s3-pri-pomoshchi-klientov-aws-cli-s3cmd-cyberduck-sdk https://beget.com/ru/cloud/storage.

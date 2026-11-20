@@ -1,0 +1,3 @@
+# Миграция
+
+Сверь пулы, эндпоинты и возможности через pools/capabilities. Регион SigV4 равен выбранному пулу; адресация задаётся профилем. Передавай данные потоково, через presigned URL или multipart. Copy работает в пределах эндпоинта. Сверяй размеры и контрольные суммы до удаления источника. Возможности целевого облака проверяй по документации: https://github.com/vk-cs/docs-public https://github.com/vk-cs/docs-public/blob/master/docs/ru/storage/s3/concepts/features/features.md https://github.com/vk-cs/docs-public/blob/master/docs/ru/storage/s3/concepts/access/signed-url/signed-url.md https://cloud.vk.ru/pricelist.

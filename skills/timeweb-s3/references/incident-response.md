@@ -1,0 +1,3 @@
+# Инцидент
+
+Начни с `doctor`, конфигурации, head/list и аудита. SDK повторяет 429/503 с адаптивной задержкой. Сверь часы и ограничения провайдера: https://timeweb.cloud/docs/s3-storage/manage-storage/s3-guide https://timeweb.cloud/docs/s3-storage/tools/aws-cli https://timeweb.cloud/docs/s3-storage/supported-features/presigned-url https://timeweb.cloud/docs/s3-storage/supported-features/object-lock https://timeweb.cloud/docs/s3-storage/manage-storage/s3-autoscaling https://timeweb.cloud/docs/s3-storage/tariffication https://timeweb.cloud/services/s3-storage. Не меняй скоуп или политику подтверждения для обхода отказа. Баланс, ключи и аккаунт проверяет владелец.

@@ -1,0 +1,3 @@
+# Объём и расходы
+
+`s3_largest_objects` и `s3_prefix_usage` дают ограниченный скан, а не биллинг. `s3_unfinished_uploads` находит multipart; abort требует согласия. Классы и verified доступны в pools. Lifecycle и выбор класса эта версия CLI не настраивает; сверь панель и официальную документацию Timeweb Cloud: https://timeweb.cloud/docs/s3-storage/manage-storage/s3-guide https://timeweb.cloud/docs/s3-storage/tools/aws-cli https://timeweb.cloud/docs/s3-storage/supported-features/presigned-url https://timeweb.cloud/docs/s3-storage/supported-features/object-lock https://timeweb.cloud/docs/s3-storage/manage-storage/s3-autoscaling https://timeweb.cloud/docs/s3-storage/tariffication https://timeweb.cloud/services/s3-storage.

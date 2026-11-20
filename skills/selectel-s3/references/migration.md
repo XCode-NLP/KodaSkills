@@ -1,0 +1,3 @@
+# Миграция
+
+Сверь пулы, эндпоинты и возможности через pools/capabilities. Регион SigV4 равен выбранному пулу; адресация задаётся профилем. Передавай данные потоково, через presigned URL или multipart. Copy работает в пределах эндпоинта. Сверяй размеры и контрольные суммы до удаления источника. Возможности целевого облака проверяй по документации: https://docs.selectel.ru/api/object-storage-s3/ https://docs.selectel.ru/s3/manage/domains/ https://docs.selectel.ru/s3/about/limitations/ https://docs.selectel.ru/s3/about/payment/ https://docs.selectel.ru/s3/buckets/create-bucket/ https://docs.selectel.ru/s3/buckets/limits/.

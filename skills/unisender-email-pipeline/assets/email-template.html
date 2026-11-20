@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{EMAIL_TITLE}}</title></head>
+<body style="margin:0;background:{{BACKGROUND}};font-family:{{FONT_FAMILY}},Arial,sans-serif;">
+<div style="display:none!important;max-height:0;overflow:hidden;opacity:0;mso-hide:all">{{PREHEADER}}</div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr em="group"><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:{{PAPER}};color:{{TEXT}};">
+<tr em="block"><td style="padding:24px;"><a href="{{HEADER_BRAND_URL}}" style="color:{{TEXT}};">{{BRAND_NAME}}</a></td></tr>
+<tr em="block"><td style="padding:24px;background:{{DARK}};color:{{LIGHT}};"><h1>{{HERO_TITLE}}</h1><p>{{HERO_TEXT}}</p></td></tr>
+<tr em="block"><td style="padding:24px;color:{{PARAGRAPH}};"><h2>{{SIGNAL_LABEL}}</h2>{{WEEK_SIGNAL_POINTS}}</td></tr>
+<!-- Insert complete <tr data-role="article-card" em="block"> cards with concrete image/title/button URLs and distinct UTM when used by pipeline. -->
+{{ARTICLE_CARDS}}
+<tr em="block"><td style="padding:24px;background:{{ACTION_BACKGROUND}};"><h2>{{ACTIONS_LABEL}}</h2>{{STRATEGIC_TAKEAWAYS}}</td></tr>
+<tr em="block"><td style="padding:24px;background:{{DARK}};color:{{LIGHT}};"><h2>{{CTA_TITLE}}</h2><p>{{CTA_DESCRIPTION}}</p><a href="{{CTA_URL}}" style="color:{{LIGHT}};background:{{ACCENT}};padding:12px;">{{CTA_BUTTON}}</a></td></tr>
+<tr em="block"><td style="padding:24px;color:{{MUTED}};"><p>{{SENDER_NAME}}</p><a href="{{SIGNATURE_BRAND_URL}}">{{BRAND_NAME}}</a></td></tr>
+<tr em="block"><td style="padding:24px;"><a href="{{FOOTER_BRAND_URL}}">{{BRAND_NAME}}</a>{{CONFIRMED_UNSUBSCRIBE}}</td></tr>
+</table></td></tr></table></body></html>

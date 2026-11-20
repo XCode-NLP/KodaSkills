@@ -1,0 +1,3 @@
+# Миграция
+
+Сверь пулы, эндпоинты и возможности через pools/capabilities. Регион SigV4 равен выбранному пулу; адресация задаётся профилем. Передавай данные потоково, через presigned URL или multipart. Copy работает в пределах эндпоинта. Сверяй размеры и контрольные суммы до удаления источника. Возможности целевого облака проверяй по документации: https://timeweb.cloud/docs/s3-storage/manage-storage/s3-guide https://timeweb.cloud/docs/s3-storage/tools/aws-cli https://timeweb.cloud/docs/s3-storage/supported-features/presigned-url https://timeweb.cloud/docs/s3-storage/supported-features/object-lock https://timeweb.cloud/docs/s3-storage/manage-storage/s3-autoscaling https://timeweb.cloud/docs/s3-storage/tariffication https://timeweb.cloud/services/s3-storage.
