@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, подсистема, редактирование]
 ---
 
 # /1c-subsystem-edit — редактирование подсистемы 1С

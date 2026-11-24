@@ -6,6 +6,7 @@ compatibility: "Нужны Node.js 18+ и оболочка. Для диагра�
 metadata:
   author: Kiko Stefanov
   source: https://github.com/kikostefanov-lab/whiteboard-skill
+  tags: [диаграммы, визуализация, архитектура]
 ---
 
 # Whiteboard

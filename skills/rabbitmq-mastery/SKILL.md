@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: Garfield247
   source: https://github.com/Garfield247/agent-skill-rabbitmq-mastery
+  tags: [rabbitmq, брокеры, отказоустойчивость]
 ---
 
 # RabbitMQ: производственная надёжность

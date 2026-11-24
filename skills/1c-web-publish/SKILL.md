@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, веб-публикация, apache]
 ---
 
 # /1c-web-publish — Публикация 1С через Apache

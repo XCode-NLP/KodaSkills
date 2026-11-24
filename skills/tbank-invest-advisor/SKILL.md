@@ -9,6 +9,7 @@ license: MIT
 metadata:
   author: icyberdeveloper
   source: https://github.com/icyberdeveloper/tbank-mcp
+  tags: [tbank, инвестиции, аналитика, mcp]
 ---
 
 # Анализ инвестиций через T-Bank MCP

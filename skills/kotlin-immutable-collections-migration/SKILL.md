@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: JetBrains
   source: https://github.com/Kotlin/kotlin-agent-skills
+  tags: [kotlin, java, миграция, коллекции]
 ---
 
 # Переход на kotlinx.collections.immutable 0.5.x

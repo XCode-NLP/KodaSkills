@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: koda
   version: "1.1.1"
+  tags: [koda, навыки, создание]
 ---
 
 # Создание агентского навыка

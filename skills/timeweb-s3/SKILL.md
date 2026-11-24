@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: stufently
   source: https://github.com/stufently/timeweb-s3-mcp-ai-cli
+  tags: [timeweb, s3, хранилище, облако]
 ---
 
 # Timeweb Cloud S3

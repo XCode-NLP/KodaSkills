@@ -6,6 +6,7 @@ compatibility: "Зависит от гипервизора. Proxmox: pvesh, qm, 
 metadata:
   author: iuliandita
   source: https://github.com/iuliandita/skills
+  tags: [виртуализация, proxmox, инфраструктура]
 ---
 
 # Виртуализация: гипервизоры, виртуальные машины и инфраструктура

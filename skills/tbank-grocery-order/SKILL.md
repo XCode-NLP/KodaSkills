@@ -10,6 +10,7 @@ license: MIT
 metadata:
   author: icyberdeveloper
   source: https://github.com/icyberdeveloper/tbank-mcp
+  tags: [tbank, доставка, заказы, mcp]
 ---
 
 # Заказ продуктов через T-Bank MCP

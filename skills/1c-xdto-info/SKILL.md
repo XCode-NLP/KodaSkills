@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, xdto, xml, анализ]
 ---
 
 # /1c-xdto-info — Анализ структуры пакета XDTO

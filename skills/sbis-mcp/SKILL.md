@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/sbis-mcp-ru
+  tags: [sbis, mcp, документооборот, api]
 ---
 
 # СБИС (Saby) через MCP

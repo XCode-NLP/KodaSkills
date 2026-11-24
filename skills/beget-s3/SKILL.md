@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: stufently
   source: https://github.com/stufently/beget-s3-mcp-ai-cli
+  tags: [beget, s3, хранилище, облако]
 ---
 
 # Beget S3

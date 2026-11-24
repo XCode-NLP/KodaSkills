@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: abdullahkhawer
   source: https://github.com/abdullahkhawer/devops-skills
+  tags: [github, cli, git, pull-request]
 ---
 
 # Навык работы с GitHub CLI

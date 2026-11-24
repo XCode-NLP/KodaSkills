@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: nebelov
   source: https://github.com/nebelov/yandex-direct-for-all
+  tags: [yandex, облако, расходы, поиск]
 ---
 
 # Контроль расходов Yandex Cloud Search API

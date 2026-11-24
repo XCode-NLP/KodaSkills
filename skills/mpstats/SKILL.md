@@ -6,6 +6,7 @@ metadata:
   author: mpstats-io
   source: https://github.com/mpstats-io/claude-code-skills
   version: "2.0.0"
+  tags: [mpstats, маркетплейсы, аналитика, api]
 ---
 
 # API MPSTATS

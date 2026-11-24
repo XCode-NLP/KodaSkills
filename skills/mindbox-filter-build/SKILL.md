@@ -6,6 +6,7 @@ metadata:
   author: mindbox-cloud
   source: https://github.com/mindbox-cloud/agent-skills
   version: 1.0.0
+  tags: [mindbox, cdp, фильтры, сегменты]
 ---
 
 # Сборка фильтра

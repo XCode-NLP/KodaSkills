@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, метаданные, анализ]
 ---
 
 # /1c-meta-info — Структура объекта метаданных 1С

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: VKirill
   source: https://github.com/VKirill/claude-lane-stack
+  tags: [yandex, облако, kubernetes, инфраструктура]
 ---
 
 ## 🎯 Требования к версиям (май 2026)

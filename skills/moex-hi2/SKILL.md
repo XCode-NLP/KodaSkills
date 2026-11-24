@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: moexalgo
   source: https://github.com/moexalgo/algopack-skills
+  tags: [moex, биржа, python, аналитика]
 ---
 
 # HI2 MOEXAlgo

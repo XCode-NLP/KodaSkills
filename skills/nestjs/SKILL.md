@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: iamursky
   source: https://github.com/iamursky/nestjs-skill
+  tags: [nestjs, typescript, nodejs, backend]
 ---
 
 # NestJS — прогрессивный серверный фреймворк

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: stufently
   source: https://github.com/stufently/vkcloud-s3-mcp-ai-cli
+  tags: [vkcloud, s3, хранилище, облако]
 ---
 
 # VK Cloud S3

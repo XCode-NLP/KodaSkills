@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: desko77
   source: https://github.com/desko77/cursor-1c-skills
+  tags: [1c, bsl, инструкция, конфигуратор]
 ---
 
 # /1c-change-package - пакет ручного внесения изменений

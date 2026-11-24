@@ -6,6 +6,7 @@ allowed-tools: mcp__mongodb__*
 metadata:
   author: mongodb
   source: https://github.com/mongodb/agent-skills
+  tags: [mongodb, база-данных, запросы, генерация]
 ---
 
 # Запросы к MongoDB на естественном языке

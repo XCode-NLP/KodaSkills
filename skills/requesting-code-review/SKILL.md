@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: obra
   source: https://github.com/obra/superpowers
+  tags: [код-ревью, качество-кода, git]
 ---
 
 # Запрос проверки кода

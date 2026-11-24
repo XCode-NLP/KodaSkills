@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: AmethystLuna
   source: https://github.com/AmethystLuna/embedded-workbench
+  tags: [c, cpp, микроконтроллеры, встраиваемые-системы]
 ---
 
 # Разработка на C/C++

@@ -6,6 +6,7 @@ allowed-tools: Bash(playwright-cli:*) Bash(npx playwright:*) Bash(npx --no-insta
 metadata:
   author: microsoft
   source: https://github.com/microsoft/playwright-cli
+  tags: [playwright, тестирование, браузер, автоматизация]
 ---
 
 # Автоматизация браузера через playwright-cli

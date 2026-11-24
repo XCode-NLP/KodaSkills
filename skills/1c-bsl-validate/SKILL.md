@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: desko77
   source: https://github.com/desko77/cursor-1c-skills
+  tags: [1c, bsl, валидация, линт]
 ---
 
 # /1c-bsl-validate - вызовы общих модулей против выгрузки, lint по каталогу дефектов

@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, конфигурация, валидация]
 ---
 
 # /1c-cf-validate — валидация конфигурации 1С

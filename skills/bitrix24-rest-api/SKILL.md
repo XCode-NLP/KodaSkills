@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: bxmaximum
   source: https://github.com/bxmaximum/bitrix-framework-skills
+  tags: [bitrix24, rest, api, интеграция]
 ---
 
 # REST Битрикс24: клиентские вызовы

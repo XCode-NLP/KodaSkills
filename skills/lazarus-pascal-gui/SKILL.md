@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: The-LukeZ
   source: https://github.com/The-LukeZ/lazarus-pascal-gui-skill
+  tags: [pascal, lazarus, gui, десктоп]
 ---
 
 # Разработка GUI на Lazarus и Object Pascal

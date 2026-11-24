@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: stufently
   source: https://github.com/stufently/selectel-s3-mcp-ai-cli
+  tags: [selectel, s3, хранилище, облако]
 ---
 
 # Selectel S3

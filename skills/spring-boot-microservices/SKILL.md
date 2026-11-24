@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: gauravs19
   source: https://github.com/gauravs19/spring-boot-microservices-skill
+  tags: [java, spring, микросервисы, backend]
 ---
 
 # Микросервисы на Spring Boot

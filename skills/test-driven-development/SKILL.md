@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: obra
   source: https://github.com/obra/superpowers
+  tags: [тестирование, tdd, методология]
 ---
 
 # Разработка через тестирование (TDD)

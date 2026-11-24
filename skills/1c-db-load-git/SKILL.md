@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, база-данных, git]
 ---
 
 # /1c-db-load-git — Загрузка изменений из Git

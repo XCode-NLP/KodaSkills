@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: desko77
   source: https://github.com/desko77/cursor-1c-skills
+  tags: [1c, 1c77, bsl, разработка]
 ---
 
 # Разработка под 1С 7.7 (1c77-dev)

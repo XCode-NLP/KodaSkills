@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: LeonxLJX
   source: https://github.com/LeonxLJX/web-engineer-skills
+  tags: [vue, javascript, frontend]
 ---
 
 # Дисциплина Vue 3 Composition API

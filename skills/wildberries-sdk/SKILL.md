@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: eslazarev
   source: https://github.com/eslazarev/wildberries-sdk
+  tags: [wildberries, sdk, api, маркетплейсы]
 ---
 
 # SDK Wildberries

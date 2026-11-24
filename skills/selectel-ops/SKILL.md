@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: dekhtyarev
   source: https://github.com/dekhtyarev/devoops-paperclip
+  tags: [selectel, облако, openstack, инфраструктура]
 ---
 
 # Операции в Selectel (только чтение)

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: Redis, Inc.
   source: https://github.com/redis/agent-skills
+  tags: [redis, база-данных, моделирование-данных]
 ---
 
 # Основы Redis

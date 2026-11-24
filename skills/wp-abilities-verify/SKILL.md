@@ -6,6 +6,7 @@ compatibility: "Рассчитано на плагины WordPress 7.0+ (PHP 7.4
 metadata:
   author: wordpress
   source: https://github.com/wordpress/agent-skills
+  tags: [wordpress, php, тестирование, api]
 ---
 
 # Проверка возможностей WordPress

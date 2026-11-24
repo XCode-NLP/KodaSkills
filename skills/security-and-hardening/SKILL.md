@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: addyosmani
   source: https://github.com/addyosmani/agent-skills
+  tags: [безопасность, аудит, уязвимости]
 ---
 
 # Безопасность и укрепление

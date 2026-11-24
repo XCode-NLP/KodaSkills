@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: desko77
   source: https://github.com/desko77/cursor-1c-skills
+  tags: [1c, форма, паттерны]
 ---
 
 # /1c-form-patterns - паттерны компоновки форм

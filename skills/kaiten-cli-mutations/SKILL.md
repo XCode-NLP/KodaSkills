@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ViktorOgnev
   source: https://github.com/ViktorOgnev/kaiten-cli
+  tags: [kaiten, cli, запись, данные]
 ---
 
 # Записи в kaiten-cli

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: artwist-polyakov
   source: https://github.com/artwist-polyakov/polyakov-claude-skills
+  tags: [yandex, webmaster, seo, api]
 ---
 
 # yandex-webmaster

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/moysklad-mcp-ru
+  tags: [moysklad, mcp, склад, интеграция]
 ---
 
 # Установка moysklad-mcp под не-технического пользователя

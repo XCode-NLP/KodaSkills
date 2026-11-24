@@ -6,6 +6,7 @@ compatibility: "Рассчитано на WordPress 7.0+ (PHP 7.4.0+). Нужн�
 metadata:
   author: wordpress
   source: https://github.com/wordpress/agent-skills
+  tags: [wordpress, php, окружение, docker]
 ---
 
 # @wordpress/env (wp-env)

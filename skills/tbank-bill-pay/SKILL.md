@@ -9,6 +9,7 @@ license: MIT
 metadata:
   author: icyberdeveloper
   source: https://github.com/icyberdeveloper/tbank-mcp
+  tags: [tbank, банк, платежи, mcp]
 ---
 
 # Оплата счетов через T-Bank MCP

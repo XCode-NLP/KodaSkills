@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: nebelov
   source: https://github.com/nebelov/yandex-direct-for-all
+  tags: [keysso, реклама, конкуренты, csv]
 ---
 
 # Исследование объявлений Keys.so

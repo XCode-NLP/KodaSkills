@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, xdto, xml, декомпиляция]
 ---
 
 # /1c-xdto-decompile — Выгрузка пакета XDTO в XML-схему

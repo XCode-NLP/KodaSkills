@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, расширение, валидация]
 ---
 
 # /1c-cfe-validate — валидация расширения конфигурации (CFE)

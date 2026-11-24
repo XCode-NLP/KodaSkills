@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: mattpocock
   source: https://github.com/mattpocock/skills
+  tags: [исследование, документация, поиск]
 ---
 
 Запусти **фонового агента** для исследования, чтобы продолжать работу, пока он читает. Запускай его с чистым окном контекста.

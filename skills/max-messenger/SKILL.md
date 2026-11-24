@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: max-messenger
   source: https://github.com/max-messenger/max-agents-skill
+  tags: [max, мессенджеры, боты, api]
 ---
 
 # Разработка под мессенджер MAX

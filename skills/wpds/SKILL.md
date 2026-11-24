@@ -6,6 +6,7 @@ compatibility: "Нужен настроенный и запущенный MCP-с
 metadata:
   author: wordpress
   source: https://github.com/wordpress/agent-skills
+  tags: [wordpress, дизайн, ui]
 ---
 
 # Дизайн-система WordPress (WPDS)

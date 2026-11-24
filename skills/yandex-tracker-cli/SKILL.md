@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ormeilu
   source: https://github.com/ormeilu/yandex-tracker-cli
+  tags: [yandex, tracker, задачи, cli]
 ---
 
 # ytcli

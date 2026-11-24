@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: desko77
   source: https://github.com/desko77/cursor-1c-skills
+  tags: [1c, конфигурация, индекс, json]
 ---
 
 # /1c-config-index - индекс конфигурации 1С

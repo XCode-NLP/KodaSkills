@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: abdullahkhawer
   source: https://github.com/abdullahkhawer/devops-skills
+  tags: [jira, confluence, cli, задачи]
 ---
 
 # Навык работы с Jira и Confluence

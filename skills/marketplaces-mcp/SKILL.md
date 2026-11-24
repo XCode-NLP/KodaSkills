@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/marketplaces-mcp-ru
+  tags: [маркетплейсы, mcp, wildberries, ozon]
 ---
 
 # Маркетплейсы через MCP

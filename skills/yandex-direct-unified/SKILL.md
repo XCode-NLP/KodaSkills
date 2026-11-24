@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: nebelov
   source: https://github.com/nebelov/yandex-direct-for-all
+  tags: [yandex, реклама, директ, api]
 ---
 
 # Яндекс.Директ: единый рабочий навык

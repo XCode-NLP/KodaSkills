@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: bxmaximum
   source: https://github.com/bxmaximum/bitrix-framework-skills
+  tags: [bitrix, php, уведомления, push]
 ---
 
 # События реального времени (`pull`)

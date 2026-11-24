@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: nebelov
   source: https://github.com/nebelov/yandex-direct-for-all
+  tags: [yandex, wordstat, реклама, api]
 ---
 
 # Yandex Wordstat API v2

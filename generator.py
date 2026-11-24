@@ -19,6 +19,8 @@ import yaml
 
 SKILL_FILE_NAME = 'SKILL.md'
 SKILL_NAME_PATTERN = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
+SKILL_TAG_PATTERN = re.compile(r'^[a-z0-9а-яё]+(?:-[a-z0-9а-яё]+)*$')
+MAX_SKILL_TAGS = 5
 IGNORED_FILE_NAMES = {'.DS_Store', 'Thumbs.db'}
 IGNORED_DIR_NAMES = {'.git', '__pycache__', '.venv', 'node_modules'}
 TIMESTAMP_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
@@ -427,6 +429,10 @@ def build_skill_metadata_map(frontmatter: dict[str, Any], skill_path: Path) -> d
     metadata_map = {}
 
     for key, value in raw_metadata.items():
+        # Теги переносятся в отдельное поле навыка, а не в карту строковых свойств
+        if key == 'tags':
+            continue
+
         string_value = metadata_value_to_string(value)
 
         if string_value is None:
@@ -436,6 +442,85 @@ def build_skill_metadata_map(frontmatter: dict[str, Any], skill_path: Path) -> d
         metadata_map[str(key)] = string_value
 
     return metadata_map
+
+
+def read_skill_tags(
+    frontmatter: dict[str, Any],
+    skill_path: Path,
+    report_missing: bool = True,
+) -> list[str] | None:
+    """
+    Читает теги навыка из поля metadata.tags.
+
+    Теги описывают тему, язык, бренд или стек навыка и нужны для фильтрации
+    каталога маркетплейса. Допускается от 1 до 5 тегов: каждое значение —
+    слово на латинице или кириллице, состоящее из букв, цифр и дефисов.
+    Приведение к нижнему регистру делает фильтрацию регистронезависимой.
+
+    Отсутствие тегов не выводится отдельной строкой на каждый навык: такие
+    случаи собирает `report_missing_tags`, чтобы не заваливать вывод.
+
+    Args:
+        frontmatter: Разобранный frontmatter
+        skill_path: Путь к SKILL.md для сообщений об ошибках
+        report_missing: Выводить ли сообщение об отсутствии поля tags
+
+    Returns:
+        Список тегов или None, если теги не заданы или заданы некорректно
+    """
+    raw_metadata = frontmatter.get('metadata')
+
+    if not isinstance(raw_metadata, dict):
+        if report_missing:
+            print(f"Не заданы теги навыка: укажите metadata.tags: {skill_path}")
+        return None
+
+    raw_tags = raw_metadata.get('tags')
+
+    if raw_tags is None:
+        if report_missing:
+            print(f"Не заданы теги навыка: укажите metadata.tags: {skill_path}")
+        return None
+
+    if not isinstance(raw_tags, list):
+        print(f"Поле metadata.tags должно быть массивом строк: {skill_path}")
+        return None
+
+    tags = []
+
+    for value in raw_tags:
+        if not isinstance(value, str):
+            print(f"Тег пропущен: ожидается строка: {skill_path}")
+            continue
+
+        tag = value.strip().lower()
+
+        if not SKILL_TAG_PATTERN.fullmatch(tag):
+            print(
+                "Тег пропущен: допустимы буквы, цифры и дефис, "
+                f"например api или база-данных: {skill_path}: {value}"
+            )
+            continue
+
+        if tag in tags:
+            print(f"Повторяющийся тег пропущен: {skill_path}: {tag}")
+            continue
+
+        tags.append(tag)
+
+    if not tags:
+        if report_missing:
+            print(f"Не заданы теги навыка: укажите metadata.tags: {skill_path}")
+        return None
+
+    if len(tags) > MAX_SKILL_TAGS:
+        print(
+            f"Допускается не более {MAX_SKILL_TAGS} тегов, "
+            f"лишние пропущены: {skill_path}"
+        )
+        tags = tags[:MAX_SKILL_TAGS]
+
+    return tags
 
 
 def read_optional_string(
@@ -484,6 +569,11 @@ def extract_skill_metadata(
     """
     Извлекает метаданные навыка из директории навыка.
 
+    Frontmatter читается из рабочей копии `SKILL.md`: теги, имя и описание
+    должны попадать в `metadata.json` сразу после правки файла, без коммита.
+    Хэши, размеры и ревизии при этом считаются по версии из Git, чтобы
+    `sha256` и `url.raw` описывали одну и ту же версию файла.
+
     Args:
         skill_dir: Путь к директории навыка
         repo_root: Путь к корню репозитория
@@ -502,8 +592,8 @@ def extract_skill_metadata(
     skills_dir = repo_root / 'skills'
     skill_files = find_skill_files(skill_dir)
 
-    # Содержимое берём из коммита, чтобы frontmatter, sha256 и size совпадали
-    # с тем, что отдают ссылки, привязанные к revision
+    # Хэши и ссылки берём из коммита, чтобы они совпадали с тем, что отдаёт
+    # url.raw, привязанная к revision
     blob_specs = {}
     for file_path in skill_files:
         relative_to_repo = file_path.relative_to(repo_root).as_posix()
@@ -513,16 +603,13 @@ def extract_skill_metadata(
 
     blobs = read_git_blobs(repo_root, blob_specs)
 
-    skill_repo_path = skill_path.relative_to(repo_root).as_posix()
-    skill_bytes = blobs.get(skill_repo_path)
-    if skill_bytes is None:
-        try:
-            skill_bytes = skill_path.read_bytes()
-        except (IOError, OSError):
-            print(f"Ошибка чтения файла: {skill_path}")
-            return None
+    try:
+        skill_text = skill_path.read_text(encoding='utf-8', errors='replace')
+    except (IOError, OSError):
+        print(f"Ошибка чтения файла: {skill_path}")
+        return None
 
-    frontmatter = parse_frontmatter(skill_bytes.decode('utf-8', 'replace'))
+    frontmatter = parse_frontmatter(skill_text)
 
     if not frontmatter:
         print(f"Frontmatter не найден в файле: {skill_path}")
@@ -546,6 +633,9 @@ def extract_skill_metadata(
     # Необязательные поля frontmatter из спецификации Agent Skills
     license_name = read_optional_string(frontmatter, 'license', skill_path)
     metadata_map = build_skill_metadata_map(frontmatter, skill_path)
+    # Об отсутствии тегов сообщает сводка в конце: строка на каждый навык
+    # утопила бы остальные предупреждения
+    tags = read_skill_tags(frontmatter, skill_path, report_missing=False)
 
     files = []
     timestamps_by_file: dict[Path, tuple[str, str]] = {}
@@ -598,6 +688,9 @@ def extract_skill_metadata(
         "description": description,
     }
 
+    if tags:
+        skill_entry["tags"] = tags
+
     if license_name is not None:
         skill_entry["license"] = license_name
 
@@ -640,7 +733,10 @@ def validate_metadata(metadata: dict[str, Any], schema_path: Path) -> None:
         raise ValueError(f"metadata.json не соответствует схеме:\n{messages}")
 
 
-def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
+def generate_metadata(
+    repo_root: Path,
+    repo_url: str,
+) -> dict[str, Any]:
     """
     Генерирует структуру metadata.json.
 
@@ -669,8 +765,9 @@ def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
     if has_uncommitted_changes(repo_root):
         print(
             "Предупреждение: в рабочем дереве есть незакоммиченные изменения. "
-            "Метаданные описывают закоммиченное состояние, поэтому такие изменения "
-            "попадут в metadata.json только после коммита."
+            "Frontmatter берётся из рабочей копии, а хэши, размеры и ревизии — "
+            "из последнего коммита, поэтому они совпадут с содержимым файлов "
+            "только после коммита."
         )
 
     for skill_dir in skill_dirs:
@@ -690,6 +787,34 @@ def generate_metadata(repo_root: Path, repo_url: str) -> dict[str, Any]:
     }
 
 
+def report_missing_tags(metadata: dict[str, Any]) -> bool:
+    """
+    Проверяет, что у каждого навыка заданы теги.
+
+    Теги обязательны: по ним клиенты фильтруют каталог маркетплейса. Ошибка
+    выводится одной сводкой, чтобы не тонуть в сообщениях схемы.
+
+    Args:
+        metadata: Сгенерированные метаданные
+
+    Returns:
+        True, если теги заданы у всех навыков
+    """
+    missing = [skill['name'] for skill in metadata['skills'] if not skill.get('tags')]
+
+    if not missing:
+        return True
+
+    preview = ', '.join(missing[:10])
+    if len(missing) > 10:
+        preview += f" и ещё {len(missing) - 10}"
+
+    print(f"Ошибка: не заданы metadata.tags у навыков ({len(missing)}): {preview}")
+    print("Добавьте metadata.tags в frontmatter SKILL.md: от 1 до 5 тегов.")
+
+    return False
+
+
 def main():
     """Основная функция скрипта."""
     # Определяем корень репозитория
@@ -707,6 +832,9 @@ def main():
 
     if not metadata:
         print("Ошибка: не удалось сгенерировать метаданные")
+        return 1
+
+    if not report_missing_tags(metadata):
         return 1
 
     schema_path = repo_root / 'metadata-schema.json'

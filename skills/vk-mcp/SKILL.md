@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/vk-mcp-ru
+  tags: [vk, mcp, api, сообщества]
 ---
 
 # VK для бизнеса через MCP

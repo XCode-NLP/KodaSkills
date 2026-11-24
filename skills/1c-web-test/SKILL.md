@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, веб-публикация, тестирование, браузер]
 ---
 
 # /1c-web-test — Browser automation for 1C web client

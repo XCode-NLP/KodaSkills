@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: morganlinton
   source: https://github.com/morganlinton/BeautifulRust
+  tags: [rust, качество-кода]
 ---
 
 # Лучшие практики Rust

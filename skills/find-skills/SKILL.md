@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: vercel-labs
   source: https://github.com/vercel-labs/skills
+  tags: [навыки, поиск, установка]
 ---
 
 # Поиск навыков

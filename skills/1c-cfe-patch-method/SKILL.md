@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, расширение, перехват-метода]
 ---
 
 # /1c-cfe-patch-method — Генерация перехватчика метода

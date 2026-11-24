@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: desko77
   source: https://github.com/desko77/cursor-1c-skills
+  tags: [1c, поддержка, конфигурация]
 ---
 
 # /1c-support-state - Состояние поддержки конфигурации в XML-выгрузке

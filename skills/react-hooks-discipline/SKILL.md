@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: LeonxLJX
   source: https://github.com/LeonxLJX/web-engineer-skills
+  tags: [react, javascript, хуки]
 ---
 
 # Дисциплина хуков React

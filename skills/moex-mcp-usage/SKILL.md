@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: hdworker
   source: https://github.com/hdworker/ru-moex-mcp
+  tags: [moex, mcp, api, биржа]
 ---
 
 # Правила работы с MOEX MCP

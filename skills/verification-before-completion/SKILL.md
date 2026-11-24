@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: obra
   source: https://github.com/obra/superpowers
+  tags: [тестирование, качество-кода, проверка]
 ---
 
 # Проверка перед заявлением о завершении

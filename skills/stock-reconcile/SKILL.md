@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/seller-skills-ru
+  tags: [маркетплейсы, остатки, склад, аналитика]
 ---
 
 # Свести остатки по кабинетам

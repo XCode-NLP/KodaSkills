@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: addyosmani
   source: https://github.com/addyosmani/agent-skills
+  tags: [миграция, архитектура, рефакторинг]
 ---
 
 # Устаревание и перенос

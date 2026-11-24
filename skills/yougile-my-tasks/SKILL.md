@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: Isk4R1oT
   source: https://github.com/Isk4R1oT/YouGlieMCP
+  tags: [yougile, задачи, api]
 ---
 
 Покажи задачи, назначенные на текущего пользователя в Yougile.

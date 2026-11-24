@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: koda
   version: "2.0.0"
+  tags: [koda, справка, документация]
 ---
 
 # Помощь по Koda (Кода)

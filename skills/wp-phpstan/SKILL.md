@@ -6,6 +6,7 @@ compatibility: "Рассчитано на WordPress 7.0+ (PHP 7.4.0+). Нуже�
 metadata:
   author: wordpress
   source: https://github.com/wordpress/agent-skills
+  tags: [wordpress, php, статический-анализ]
 ---
 
 # PHPStan в проектах WordPress

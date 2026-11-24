@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: TestMu AI
   source: https://github.com/LambdaTest/agent-skills
+  tags: [laravel, php, тестирование, браузер]
 ---
 
 # Тестирование на Laravel Dusk

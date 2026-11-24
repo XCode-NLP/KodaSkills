@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: mattpocock
   source: https://github.com/mattpocock/skills
+  tags: [triage, задачи, pull-request, методология]
 ---
 
 # Разбор обращений

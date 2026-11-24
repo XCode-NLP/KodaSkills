@@ -16,6 +16,7 @@ license: MIT
 metadata:
   author: koda
   version: "1.1.0"
+  tags: [koda, боты, мессенджеры, интеграция]
 ---
 
 # Боты для мессенджеров

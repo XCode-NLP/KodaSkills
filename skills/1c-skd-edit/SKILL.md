@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, скд, отчёт, редактирование]
 ---
 
 # /1c-skd-edit — точечное редактирование СКД (Template.xml)

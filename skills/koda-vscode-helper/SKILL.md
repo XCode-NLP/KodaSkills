@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: koda
   version: "1.0.0"
+  tags: [koda, vscode, справка, ide]
 ---
 
 # Помощь по VS Code / VSCodium / Theia

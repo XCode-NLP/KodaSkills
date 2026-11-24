@@ -6,6 +6,7 @@ compatibility: "Редактор в браузере. Свой код: HTML/CSS/
 metadata:
   author: terminal-skills
   source: https://github.com/TerminalSkills/skills
+  tags: [tilda, сайты, конструкторы, вёрстка]
 ---
 
 # Tilda Publishing

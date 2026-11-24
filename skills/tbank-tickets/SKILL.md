@@ -12,6 +12,7 @@ license: MIT
 metadata:
   author: icyberdeveloper
   source: https://github.com/icyberdeveloper/tbank-mcp
+  tags: [tbank, билеты, события, mcp]
 ---
 
 # Билеты в афише T-Bank MCP: кино, концерты, театр, выставки

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: 18studio
   source: https://github.com/18studio/yandex-speechkit-skill
+  tags: [yandex, speechkit, речь, api]
 ---
 
 # Yandex SpeechKit

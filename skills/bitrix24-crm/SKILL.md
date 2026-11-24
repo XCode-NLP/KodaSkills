@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: bxmaximum
   source: https://github.com/bxmaximum/bitrix-framework-skills
+  tags: [bitrix24, php, crm]
 ---
 
 # CRM Битрикс24: серверный PHP

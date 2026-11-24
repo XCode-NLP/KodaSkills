@@ -6,6 +6,7 @@ metadata:
   author: mindbox-cloud
   source: https://github.com/mindbox-cloud/agent-skills
   version: 2.0.1
+  tags: [mindbox, email, маркетинг, шаблоны]
 ---
 
 # mindbox-email — генерация письма

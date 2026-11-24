@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: n8n-io
   source: https://github.com/n8n-io/skills
+  tags: [n8n, автоматизация, воркфлоу]
 ---
 
 # Жизненный цикл процесса n8n

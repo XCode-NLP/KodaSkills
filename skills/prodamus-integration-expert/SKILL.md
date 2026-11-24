@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: Prodamus
   source: https://github.com/PRODAMUS/integration-expert
+  tags: [prodamus, платежи, интеграция, api]
 ---
 
 # Эксперт по интеграции Prodamus

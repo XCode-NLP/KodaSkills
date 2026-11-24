@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: nebelov
   source: https://github.com/nebelov/yandex-direct-for-all
+  tags: [roistat, аналитика, api, отчёт]
 ---
 
 # Отчёты Roistat

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/chestny-znak-mcp-ru
+  tags: [честный-знак, mcp, маркировка, api]
 ---
 
 # Честный знак (ГИС МТ) и СУЗ через MCP

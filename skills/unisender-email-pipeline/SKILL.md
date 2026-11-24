@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: LuCheremisina
   source: https://github.com/LuCheremisina/marketing-skills
+  tags: [unisender, email, маркетинг, рассылки]
 ---
 
 # CHE_unisender-email-pipeline

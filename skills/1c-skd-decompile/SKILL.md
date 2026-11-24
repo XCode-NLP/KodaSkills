@@ -7,6 +7,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, скд, отчёт]
 ---
 
 # /1c-skd-decompile — JSON-черновик из Template.xml СКД

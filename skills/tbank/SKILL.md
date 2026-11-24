@@ -10,6 +10,7 @@ license: MIT
 metadata:
   author: icyberdeveloper
   source: https://github.com/icyberdeveloper/tbank-mcp
+  tags: [tbank, банк, mcp, финансы]
 ---
 
 # T-Bank MCP — с чего начать

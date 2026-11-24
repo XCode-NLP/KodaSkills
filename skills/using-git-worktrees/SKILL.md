@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: obra
   source: https://github.com/obra/superpowers
+  tags: [git, worktree, изоляция]
 ---
 
 # Работа с git worktree

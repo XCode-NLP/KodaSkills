@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: vercel-labs
   source: https://github.com/vercel-labs/skills
+  tags: [pull-request, метки, triage]
 ---
 
 # Разметка пул-реквеста проекта командной строки навыков

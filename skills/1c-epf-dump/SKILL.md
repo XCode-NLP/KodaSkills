@@ -6,6 +6,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, обработка, декомпиляция]
 ---
 
 # /1c-epf-dump — Разборка обработки

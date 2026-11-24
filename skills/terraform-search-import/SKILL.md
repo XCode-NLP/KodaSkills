@@ -6,6 +6,7 @@ compatibility: "Требуется Terraform 1.14 или новее и пров�
 metadata:
   author: hashicorp
   source: https://github.com/hashicorp/agent-skills
+  tags: [terraform, импорт, облако]
 ---
 
 # Поиск и массовый импорт в Terraform

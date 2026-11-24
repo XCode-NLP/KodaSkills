@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ViktorOgnev
   source: https://github.com/ViktorOgnev/kaiten-cli
+  tags: [kaiten, cli, права, доступ]
 ---
 
 # Справочник по доступам в API Kaiten

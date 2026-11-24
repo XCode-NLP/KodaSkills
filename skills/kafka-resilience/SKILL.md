@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: vaquarkhan
   source: https://github.com/vaquarkhan/data-engineering-agent-skills
+  tags: [kafka, брокеры, отказоустойчивость]
 ---
 
 # Устойчивость Kafka и эволюция схем

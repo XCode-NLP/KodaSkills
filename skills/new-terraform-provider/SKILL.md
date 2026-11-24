@@ -5,6 +5,7 @@ license: MPL-2.0
 metadata:
   author: hashicorp
   source: https://github.com/hashicorp/agent-skills
+  tags: [terraform, go, провайдеры]
 ---
 
 Чтобы создать каркас нового провайдера Terraform на Plugin Framework:

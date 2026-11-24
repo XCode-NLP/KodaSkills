@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: BretFisher
   source: https://github.com/BretFisher/skills
+  tags: [docker, dockerfile, контейнеры, devops]
 ---
 
 # Современные правила Docker и BuildKit

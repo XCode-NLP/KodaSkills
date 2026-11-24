@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyautov
   source: https://github.com/ilyautov/seller-skills-ru
+  tags: [avito, маркетплейсы, объявления, api]
 ---
 
 # Объявления Авито

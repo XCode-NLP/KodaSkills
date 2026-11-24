@@ -12,6 +12,7 @@ license: MIT
 metadata:
   author: koda
   version: "1.0.0"
+  tags: [koda, документы, офис, таблицы]
 ---
 
 # Офисные документы

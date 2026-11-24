@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: anthropic
   source: https://github.com/anthropics/skills
+  tags: [pdf, документы]
 ---
 
 # Работа с PDF

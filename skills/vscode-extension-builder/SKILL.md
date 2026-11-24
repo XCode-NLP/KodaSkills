@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: smallbigchicken
   source: https://github.com/smallbigchicken/vscode-extension-builder-skill
+  tags: [vscode, расширения, typescript]
 ---
 
 # Сборка расширений VS Code

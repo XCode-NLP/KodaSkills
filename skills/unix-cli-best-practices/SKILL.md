@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: reidbaker
   source: https://github.com/flutter/agent-plugins
+  tags: [cli, unix, bash, качество-кода]
 ---
 
 # Хорошие практики командной строки Unix

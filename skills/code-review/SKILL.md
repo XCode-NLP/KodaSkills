@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: mattpocock
   source: https://github.com/mattpocock/skills
+  tags: [код-ревью, качество-кода, git]
 ---
 
 Проверка диффа между `HEAD` и точкой, которую указал пользователь, по двум осям:

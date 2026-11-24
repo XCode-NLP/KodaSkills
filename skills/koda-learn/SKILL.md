@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: koda
   version: "1.1.0"
+  tags: [koda, навыки, установка]
 ---
 
 # Поиск и установка навыков (скиллов)

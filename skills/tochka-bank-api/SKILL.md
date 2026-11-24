@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: rodion-m
   source: https://github.com/rodion-m/tochka-bank-skill
+  tags: [tochka, банк, api, платежи]
 ---
 
 # API Точка Банка

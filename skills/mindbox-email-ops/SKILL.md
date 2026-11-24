@@ -6,6 +6,7 @@ metadata:
   author: mindbox-cloud
   source: https://github.com/mindbox-cloud/agent-skills
   version: 1.1.2
+  tags: [mindbox, email, api]
 ---
 
 # mindbox-email-ops — операции Mindbox для писем

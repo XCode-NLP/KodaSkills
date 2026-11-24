@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: ilyavlasoff
   source: https://github.com/ilyavlasoff/RetailCRM-Plugin
+  tags: [retailcrm, crm, graphql, api]
 ---
 
 # Работа с RetailCRM

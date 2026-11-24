@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: obra
   source: https://github.com/obra/superpowers
+  tags: [агенты, субагенты, разработка]
 ---
 
 # Разработка через субагентов

@@ -5,6 +5,7 @@ license: Apache-2.0
 metadata:
   author: abdullahkhawer
   source: https://github.com/abdullahkhawer/devops-skills
+  tags: [gitlab, cli, git, merge-request]
 ---
 
 # Навык работы с GitLab CLI

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: yoanbernabeu
   source: https://github.com/yoanbernabeu/symfony-yoandev-skills
+  tags: [symfony, php, качество-кода]
 ---
 
 # Стандарты Symfony

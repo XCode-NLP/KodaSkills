@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: makenotion
   source: https://github.com/makenotion/skills
+  tags: [notion, cli, api]
 ---
 
 # Командная строка Notion

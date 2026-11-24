@@ -11,6 +11,7 @@ license: MIT
 metadata:
   author: icyberdeveloper
   source: https://github.com/icyberdeveloper/tbank-mcp
+  tags: [tbank, путешествия, билеты, mcp]
 ---
 
 # Поездки: поезда, самолёты, отели, маркетплейс

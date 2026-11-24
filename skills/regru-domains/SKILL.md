@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: Dmitriy-deov
   source: https://github.com/Dmitriy-deov/regru-cli
+  tags: [regru, dns, домены, cli]
 ---
 
 # regru-domains

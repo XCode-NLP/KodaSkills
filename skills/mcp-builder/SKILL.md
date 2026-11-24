@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: mcp-use
   source: https://github.com/mcp-use/mcp-use
+  tags: [mcp, typescript, серверы]
 ---
 
 # Разработка на mcp-use

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: TestMu AI
   source: https://github.com/LambdaTest/agent-skills
+  tags: [phpunit, php, тестирование]
 ---
 
 # Тестирование на PHPUnit

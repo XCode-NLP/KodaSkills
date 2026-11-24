@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: mattpocock
   source: https://github.com/mattpocock/skills
+  tags: [задачи, декомпозиция, трекеры]
 ---
 
 # Задачи из плана

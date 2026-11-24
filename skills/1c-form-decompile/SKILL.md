@@ -7,6 +7,7 @@ license: MIT
 metadata:
   author: nikolay-shirokov
   source: https://github.com/nikolay-shirokov/cc-1c-skills
+  tags: [1c, форма, декомпиляция]
 ---
 
 # /1c-form-decompile — JSON-черновик из Form.xml управляемой формы

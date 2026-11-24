@@ -5,6 +5,7 @@ license: MIT
 metadata:
   author: moexalgo
   source: https://github.com/moexalgo/algopack-skills
+  tags: [moex, api, биржа, доступ]
 ---
 
 # Доступ к ALGOPACK

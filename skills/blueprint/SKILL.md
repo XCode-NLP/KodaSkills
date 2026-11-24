@@ -6,6 +6,7 @@ compatibility: "WordPress 7.0+, PHP 7.4.0+. Дополнительно нуже�
 metadata:
   author: wordpress
   source: https://github.com/wordpress/agent-skills
+  tags: [wordpress, json, blueprint]
 ---
 
 # Blueprint для WordPress Playground
